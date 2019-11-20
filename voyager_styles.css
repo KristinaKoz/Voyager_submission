@@ -53,6 +53,31 @@ header {
     padding: 10px;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #9e34b4;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top: 100%;
+    left:50%;
+    margin-left: -60px;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you hover over the flag icon */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
 
 /* style and place nav */
 nav ul {
@@ -114,6 +139,11 @@ nav .dropdown-content { /* Styles the dropdown element */
 
 .dropdown:hover .dropdown-content { /* Displays the dropdown content on hover */
     display: block;
+}
+
+.anchor { /* This is to fix the issue casued by having a sticky header */
+    padding-top:210px;
+    margin-top:-210px;
 }
 
 /* Styling the footer */
