@@ -50,8 +50,9 @@ header {
 }
 
 .header_buttons img{ /* adds padding around the individual header buttons */
-    padding:10px;
+    padding: 10px;
 }
+
 
 /* style and place nav */
 nav ul {
@@ -60,7 +61,6 @@ nav ul {
     padding: 0;
     overflow: hidden;
     background-color: #0e1fb5;
-    
 }
 
 nav li {
@@ -114,6 +114,42 @@ nav .dropdown-content { /* Styles the dropdown element */
 
 .dropdown:hover .dropdown-content { /* Displays the dropdown content on hover */
     display: block;
+}
+
+/* Styling the footer */
+footer {
+    margin-top:20px;
+    background-image: url("media/galaxy.jpg");
+    background-color: #040936;
+    width: 100%;
+    background-size: cover;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 0.1em;
+}
+
+.wrapper {
+    display:grid;
+    grid-template-columns: 33% 34% 33%;
+    column-gap: 30px;
+    padding: 25px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 20px;
+}
+
+footer ul a {
+    color: white;
+}
+
+.copyright {
+    padding:20px;
+    font-weight:bold;
+    text-align: right;
 }
 
 /* ***************************************************************************** */
