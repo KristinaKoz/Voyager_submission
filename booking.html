@@ -14,31 +14,42 @@
         <meta name="refresh" content="600">
         <!-- CHECK KEYWORDS, MISSION STATEMENT, SEO OPTIMIZATION-->
         <meta name="keywords" content="Amusement Park Holidays Family Holidays Children Space Fun">
-        <!-- Adding link to the CSS -->
+        <!-- Adding link to the CSS and JavaScript -->
         <link rel="stylesheet" type="text/css" href="voyager_styles.css">
+        <script src="js/getDate.js"></script>
     </head>
 
     <!--Body-->
     <body>
-
         <!--THE HEADER CONTAINS THE LOGO, LANGUAGE OPTIONS, SHOPPING CART AND NAVIGATION-->
         <header>
-            <p>
-                <time datetime="2019-11-19">19th November</time> : We are open from <time>10:00</time> to <time>18:00</time>.
-            </p>
-            <a href=""><img src="media/cart.png" alt="Link to shopping cart" width="50"></a>
-            <img src="media/en.png" alt="Language option" width="40">
-            <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE - IN FUTURE STAGES THERE WILL BE A DROP DOWN MENU -->
-            <nav>
+            <!-- Logo -->
+            <div class="logo_container">
                 <a href="index.html"><img src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
-                <ul class="dropdown">
-                    <li>
-                        <a href="index.html">Attractions and Activities</a>
-                        <ul>
-                            <li><a href="index.html#voyager_attractions">Most visited attractions</a></li>
-                            <li><a href="practical_information.html#specialoffers">Special offers</a></li>
-                            <li><a href="index.html#latest_news">Latest events and news</a></li>
-                        </ul>
+            </div>
+
+            <div class="header_buttons">
+                <a href=""><img src="media/cart.png" alt="Link to shopping cart" height="40"></a>
+                <img src="media/en.png" alt="Language option" width="40">
+            </div>
+            <p class="opening_today">
+                <!-- This piece of code uses a simple JavaScript script to get the current date -->
+                <span id="date_time"></span>
+                <script>window.onload = date_time('date_time');</script>: <br/>
+                We are open from <time>10:00</time> to <time>18:00</time>.
+            </p>
+
+            <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE-->
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="index.html#voyager_attractions" class="dropbtn">Attractions and Activities</a>
+                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <div class="dropdown-content">
+                            <a href="index.html#voyager_attractions">Most visited attractions</a>
+                            <a href="practical_information.html#specialoffers">Special offers</a>
+                            <a href="index.html#latest_news">Latest events and news</a>
+                        </div>
                     </li>
                     <li><a href="practical_information.html">Practical information</a></li>
                     <li><a href="booking.html">Book your ticket</a></li>
@@ -232,7 +243,7 @@
             </form>
         </div>
 
-         <!--THE FOOTER CONTAINS A NUMBER OF LINKS TO IMPORTANT PARTS OF THE SITE, SOCIAL MEDIA LINKS AND LEGAL INFORMATION-->
+        <!--THE FOOTER CONTAINS A NUMBER OF LINKS TO IMPORTANT PARTS OF THE SITE, SOCIAL MEDIA LINKS AND LEGAL INFORMATION-->
         <footer>
 
             <!--LINKS TO IMPORTANT INFORMATION-->

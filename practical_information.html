@@ -3,7 +3,7 @@
 
     <!--METADATA-->
     <!-- Contribution: Main coding for this page was provided by Kenjiro Ono. Content was provided by Kristina Kozaj. Additional coding work on the skeleton and header/footer was provided by Kishore Mishra and Kristina Kozaj. Tweaks for validation were done by Hazel O'Keeffe. -->
-    
+
     <head>
         <title>Voyager | Europe's largest Space-themed Amusement Park</title>
         <meta charset="utf-8">
@@ -14,38 +14,49 @@
         <meta name="refresh" content="600">
         <!-- CHECK KEYWORDS, MISSION STATEMENT, SEO OPTIMIZATION-->
         <meta name="keywords" content="Amusement Park Holidays Family Holidays Children Space Fun">
-        <!-- Adding link to the CSS -->
+        <!-- Adding link to the CSS and JavaScript -->
         <link rel="stylesheet" type="text/css" href="voyager_styles.css">
+        <script src="js/getDate.js"></script>
     </head>
 
     <!--Body-->
     <body>
-
         <!--THE HEADER CONTAINS THE LOGO, LANGUAGE OPTIONS, SHOPPING CART AND NAVIGATION-->
         <header>
-            <p>
-                <time datetime="2019-11-19">19th November</time> : We are open from <time>10:00</time> to <time>18:00</time>.
-            </p>
-            <a href=""><img src="media/cart.png" alt="Link to shopping cart" width="50"></a>
-            <img src="media/en.png" alt="Language option" width="40">
-            <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE - IN FUTURE STAGES THERE WILL BE A DROP DOWN MENU -->
-            <nav>
+            <!-- Logo -->
+            <div class="logo_container">
                 <a href="index.html"><img src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
-                <ul class="dropdown">
-                    <li>
-                        <a href="index.html">Attractions and Activities</a>
-                        <ul>
-                            <li><a href="index.html#voyager_attractions">Most visited attractions</a></li>
-                            <li><a href="practical_information.html#specialoffers">Special offers</a></li>
-                            <li><a href="index.html#latest_news">Latest events and news</a></li>
-                        </ul>
+            </div>
+
+            <div class="header_buttons">
+                <a href=""><img src="media/cart.png" alt="Link to shopping cart" height="40"></a>
+                <img src="media/en.png" alt="Language option" width="40">
+            </div>
+            <p class="opening_today">
+                <!-- This piece of code uses a simple JavaScript script to get the current date -->
+                <span id="date_time"></span>
+                <script>window.onload = date_time('date_time');</script>: <br/>
+                We are open from <time>10:00</time> to <time>18:00</time>.
+            </p>
+
+            <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE-->
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="index.html#voyager_attractions" class="dropbtn">Attractions and Activities</a>
+                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <div class="dropdown-content">
+                            <a href="index.html#voyager_attractions">Most visited attractions</a>
+                            <a href="practical_information.html#specialoffers">Special offers</a>
+                            <a href="index.html#latest_news">Latest events and news</a>
+                        </div>
                     </li>
                     <li><a href="practical_information.html">Practical information</a></li>
                     <li><a href="booking.html">Book your ticket</a></li>
                 </ul>
             </nav>
         </header>
-
+        
         <h1 id="practical_info">Practical Information</h1>
         <h2>Here you will find all the information, advice and tips you need to arrange your visit.</h2>
         <!-- This part of the page contains links to relevant information that people can use to plan their trip. -->    
@@ -109,9 +120,9 @@
                 <img src='media/ticket_offer_1.png' alt="Ticket Promotion 1 image" width="200" />
                 <p>Limited time offer: save 20% on vacation packages!</p>
                 <!-- this code creates the button that links to the booking page -->
-            <form>
-                <button>Book now</button>
-            </form>
+                <form>
+                    <button>Book now</button>
+                </form>
             </div>
 
             <!-- Promotion 2-->
@@ -123,9 +134,9 @@
                     15 March - 27 May 2020. Book before 4 January 2020!
                 </p>
                 <!-- this code creates the button that links to the booking page -->
-            <form>
-                <button>Book now</button>
-            </form>
+                <form>
+                    <button>Book now</button>
+                </form>
             </div>
 
             <!-- Promotion 3-->
@@ -137,9 +148,9 @@
                     Book before 15 December 2019!
                 </p>
                 <!-- this code creates the button that links to the booking page -->
-            <form>
-                <button>Book now</button>
-            </form>
+                <form>
+                    <button>Book now</button>
+                </form>
             </div>
         </div>
         <!--THE FOOTER CONTAINS A NUMBER OF LINKS TO IMPORTANT PARTS OF THE SITE, SOCIAL MEDIA LINKS AND LEGAL INFORMATION-->

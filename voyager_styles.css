@@ -1,13 +1,135 @@
-/* Load custom fonts here */
+/* Contributions: Header styled by Hazel O'Keeffe. */
+
+/* CUSTOM FONTS */
+
+@import url('https://fonts.googleapis.com/css?family=Fascinate|Roboto+Slab&display=swap'); /* NOTE - Fascinate isn't the correct font from the logo, but the closest I could find */
+
+/* ***************************************************************************** */
+/* STYLES FOR ALL PAGES */
+
+/* The Header consists of the logo, current opening times, language, cart and navigation. It is fixed to the top of the page and stays there when the user scrolls. */
+header {
+    overflow: visible;
+    background-color: white;
+    position: sticky; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+/* Place logo */
+.logo_container {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+}
+
+/* Style and place opening hours text */
+.opening_today {
+    font-family: 'Roboto Slab', serif;
+    color: #091475;
+    padding-left:30px;
+    position: absolute;
+    top: 50px;
+}
+
+.opening_today span {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #091475;
+}
+
+/* place header buttons */
+.header_buttons {
+    position: absolute;
+    top: 58px;
+    right: 50px;
+}
+
+.header_buttons img{ /* adds padding around the individual header buttons */
+    padding:10px;
+}
+
+/* style and place nav */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0e1fb5;
+    
+}
+
+nav li {
+    float:left;
+    width:33%;
+}
+
+nav li:nth-child(2){ /* a slight hack-around to get the nav to equal 100% - set the second li to 34% while the rest stay at 33% */
+    float:left;
+    width:34%;
+}
+
+nav li a, .dropbtn {
+    display: block;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover, .dropdown:hover .dropbtn {
+    background-color: #091475;
+}
+
+nav li.dropdown {
+    display: inline-block;
+}
+
+nav .dropdown-content { /* Styles the dropdown element */
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 33%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a { /* Styles text and appearance of links in dropdown */
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    text-align: center;
+}
+
+.dropdown-content a:hover { /* Changes colour of dropdown element being hovered over */
+    background-color: #f1f1f1;
+} 
+
+.dropdown:hover .dropdown-content { /* Displays the dropdown content on hover */
+    display: block;
+}
+
+/* ***************************************************************************** */
+/* STYLES FOR INDEX */
 
 
-/* Generic styles that apply to all pages here */
 
 
-/* Styles for Index */
+/* ***************************************************************************** */
+/* STYLES FOR PRACTICAL INFO PAGE */
 
 
-/* Styles for Practical Information page */
 
 
-/* Styles for Booking page */
+/* ***************************************************************************** */
+/* STYLES FOR BOOKING PAGE */
+
+
+
