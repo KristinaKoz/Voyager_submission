@@ -3,7 +3,7 @@ function date_time(id)
         date = new Date;
         year = date.getFullYear();
         month = date.getMonth();
-        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
         d = date.getDate();
         day = date.getDay();
         days = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
