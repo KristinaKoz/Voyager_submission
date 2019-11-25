@@ -141,7 +141,7 @@ nav .dropdown-content { /* Styles the dropdown element */
     display: block;
 }
 
-.anchor { /* This is to fix the issue casued by having a sticky header */
+.anchor { /* This is to fix the anchor display issue casued by having a sticky header */
     padding-top:210px;
     margin-top:-210px;
 }
@@ -160,6 +160,10 @@ footer {
     letter-spacing: 0.1em;
 }
 
+footer a {
+    text-decoration: none;
+}
+
 .wrapper {
     display:grid;
     grid-template-columns: 33% 34% 33%;
@@ -169,18 +173,79 @@ footer {
 
 footer ul {
     list-style-type: none;
-    padding: 20px;
+    padding:10px;
 }
 
 footer ul a {
     color: white;
 }
 
+footer ul a:hover {
+    color: #9e34b4;
+}
+
 .copyright {
     padding:20px;
-    font-weight:bold;
     text-align: right;
 }
+
+.padded_bottom {
+    padding-bottom: 25px;
+}
+
+/* This section styles the info accordian in the footer */
+summary {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #9e34b4;
+    transition: 1s;
+    margin-bottom: 5px;
+}
+
+.accordian_details {
+    padding-top:5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    background-color: white;
+    margin-bottom:15px;
+    color: black;
+    margin-top:-5px;
+}
+
+footer table {
+    border-collapse: collapse; 
+    border-spacing: 0;
+    width:100%;
+    margin-top:20px;
+}
+
+footer table th {
+    width:50%;
+    padding:5px;
+
+}
+
+footer table tr:nth-child(odd) td { 
+    background: #F1F1F1; 
+}   
+
+footer table tr:nth-child(odd) th { 
+    background: #F1F1F1; 
+}  
+
+address {
+    font-style:normal;
+}
+.contact_info {
+    color: black;
+}
+
+.contact_info:hover {
+    color: #9e34b4;
+}
+
 
 /* ***************************************************************************** */
 /* STYLES FOR INDEX */
