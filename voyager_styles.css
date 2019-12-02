@@ -10,258 +10,259 @@
 
 /* The Header consists of the logo, current opening times, language, cart and navigation. It is fixed to the top of the page and stays there when the user scrolls. */
 header {
-  overflow: visible;
-  background-color: white;
-  position: sticky;
-  /* Set the navbar to fixed position */
-  top: 0;
-  /* Position the navbar at the top of the page */
-  margin-left: 1px;
-  margin-right: 1px;
+    overflow: visible;
+    background-color: white;
+    position: sticky;
+    /* Set the navbar to fixed position */
+    top: 0;
+    width:100%;
+    /* Position the navbar at the top of the page 
+    margin-left: 1px;
+    margin-right: 1px;*/
 }
 
 /* Place logo */
 .logo_container {
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .logo {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 /* Style and place opening hours text */
 .opening_today {
-  font-family: 'Roboto Slab', serif;
-  color: #091475;
-  padding-left: 30px;
-  position: absolute;
-  top: 50px;
-  text-align: left;
+    font-family: 'Roboto Slab', serif;
+    color: #091475;
+    padding-left: 30px;
+    position: absolute;
+    top: 50px;
+    text-align: left;
 }
 
 .opening_today span {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #091475;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #091475;
 }
 
 /* place header buttons */
 .header_buttons {
-  position: absolute;
-  top: 58px;
-  right: 50px;
+    position: absolute;
+    top: 58px;
+    right: 50px;
 }
 
 .header_buttons img {
-  /* adds padding around the individual header buttons */
-  padding: 10px;
+    /* adds padding around the individual header buttons */
+    padding: 10px;
 }
 
 .tooltip {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #9e34b4;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -60px;
-  z-index: 1;
+    visibility: hidden;
+    width: 120px;
+    background-color: #9e34b4;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    z-index: 1;
 }
 
 /* Show the tooltip text when you hover over the flag icon */
 .tooltip:hover .tooltiptext {
-  visibility: visible;
+    visibility: visible;
 }
 
 /* style and place nav */
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #0e1fb5;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0e1fb5;
 }
 
 nav li {
-  float: left;
-  width: 33%;
+    float: left;
+    width: 33%;
 }
 
 nav li:nth-child(2) {
-  /* a slight hack-around to get the nav to equal 100% - set the second li to 34% while the rest stay at 33% */
-  float: left;
-  width: 34%;
+    /* a slight hack-around to get the nav to equal 100% - set the second li to 34% while the rest stay at 33% */
+    float: left;
+    width: 34%;
 }
 
 nav li a,
 .dropbtn {
-  display: block;
-  color: white;
-  font-family: 'Roboto Slab', serif;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 nav li a:hover,
 .dropdown:hover .dropbtn {
-  background-color: #091475;
+    background-color: #091475;
 }
 
 nav li.dropdown {
-  display: inline-block;
+    display: inline-block;
 }
 
 nav .dropdown-content {
-  /* Styles the dropdown element */
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 33%;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+    /* Styles the dropdown element */
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 33%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .dropdown-content a {
-  /* Styles text and appearance of links in dropdown */
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  text-align: center;
+    /* Styles text and appearance of links in dropdown */
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    text-align: center;
 }
 
 .dropdown-content a:hover {
-  /* Changes colour of dropdown element being hovered over */
-  background-color: #f1f1f1;
+    /* Changes colour of dropdown element being hovered over */
+    background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
-  /* Displays the dropdown content on hover */
-  display: block;
+    /* Displays the dropdown content on hover */
+    display: block;
 }
 
 .anchor {
-  /* This is to fix the anchor display issue casued by having a sticky header */
-  padding-top: 210px;
-  margin-top: -210px;
+    /* This is to fix the anchor display issue casued by having a sticky header */
+    padding-top: 210px;
+    margin-top: -210px;
 }
 
 /* Styling the footer */
 footer {
-  margin-top: 20px;
-  /*
-    background-image: url("media/galaxy.jpg");
-    background-color: #040936;
-*/
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  /* Center the image */
-  background-repeat: no-repeat;
-  color: white;
-  font-family: 'Roboto Slab', serif;
-  letter-spacing: 0.1em;
+    margin-top: 20px;
+    /*
+    background-image: url("media/galaxy.jpg");*/
+    background-color: rgba(4,9,54,0.9);
+    */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 0.1em;
 }
 
 footer a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: 33% 34% 33%;
-  column-gap: 30px;
-  padding: 25px;
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    column-gap: 30px;
+    padding: 25px;
 }
 
 footer ul {
-  list-style-type: none;
-  padding: 10px;
+    list-style-type: none;
+    padding: 10px;
 }
 
 footer ul a {
-  color: white;
+    color: white;
 }
 
 footer ul a:hover {
-  color: #9e34b4;
+    color: #9e34b4;
 }
 
 .copyright {
-  padding: 20px;
-  text-align: right;
+    padding: 20px;
+    text-align: right;
 }
 
 .padded_bottom {
-  padding-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 /* This section styles the info accordian in the footer */
 summary {
-  display: block;
-  cursor: pointer;
-  padding: 10px;
-  background-color: #9e34b4;
-  transition: 1s;
-  margin-bottom: 5px;
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #9e34b4;
+    transition: 1s;
+    margin-bottom: 5px;
 }
 
 .accordian_details {
-  padding-top: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 30px;
-  background-color: white;
-  margin-bottom: 15px;
-  color: black;
-  margin-top: -5px;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    background-color: white;
+    margin-bottom: 15px;
+    color: black;
+    margin-top: -5px;
 }
 
 footer table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  margin-top: 20px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin-top: 20px;
 }
 
 footer table th {
-  width: 50%;
-  padding: 5px;
+    width: 50%;
+    padding: 5px;
 }
 
 footer table tr:nth-child(odd) td {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
 
 footer table tr:nth-child(odd) th {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
 
 address {
-  font-style: normal;
+    font-style: normal;
 }
 
 .contact_info {
-  color: black;
+    color: black;
 }
 
 .contact_info:hover {
-  color: #9e34b4;
+    color: #9e34b4;
 }
 
 /* ***************************************************************************** */
@@ -270,454 +271,366 @@ address {
 /*Styling for slideshow container*/
 
 .slideshow-container {
-  border-radius: 25px;
-  max-width: 80%;
-  position: relative;
-  margin-left: 160px;
-  margin-right: 160px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  text-align: center;
-  object-fit: scale-down;
-  z-index: -1;
+    border-radius: 25px;
+    max-width: 80%;
+    position: relative;
+    margin-left: 160px;
+    margin-right: 160px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-align: center;
+    object-fit: scale-down;
+    z-index: -1;
 }
 
 .mySlides {
-  display: block;
-  height: 400px;
+    display: block;
+    height: 400px;
 }
 
 /*Styling navigation dots under slideshow container*/
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px 10px 0;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px 10px 0;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
 .dot:hover {
-  background-color: #717171;
+    background-color: #717171;
 }
 
 /* Styling the mission statement container */
 .mission {
-  padding: 2px;
-  max-width: 80%;
-  position: relative;
-  margin-left: 160px;
-  margin-right: 160px;
-  overflow: hidden;
-  text-align: center;
-  z-index: -1;
+    padding: 2px;
+    max-width: 80%;
+    position: relative;
+    margin-left: 160px;
+    margin-right: 160px;
+    overflow: hidden;
+    text-align: center;
+    z-index: -1;
 }
 
 /*Styling container for attractions and customer reviews*/
 
 .home_wrapper {
-  display: grid;
-  grid-template-columns: 68% 30%;
-  margin-left: 160px;
-  margin-right: 160px;
-  column-gap: 60px;
-  z-index: -1;
-  text-align: justify;
+    display: grid;
+    grid-template-columns: 68% 30%;
+    margin-left: 160px;
+    margin-right: 160px;
+    column-gap: 60px;
+    z-index: -1;
+    text-align: justify;
 }
 
 .home_content {
-  display: inline-block;
-  max-width: 100%;
-  z-index: -1;
+    display: inline-block;
+    max-width: 100%;
+    z-index: -1;
 }
 
 /*Styling container for latest news and social media feed*/
 
 .aside {
-  display: inline-block;
-  max-width: 95%;
-  text-align: justify-all;
-  z-index: -1;
+    display: inline-block;
+    max-width: 95%;
+    text-align: justify-all;
+    z-index: -1;
 }
 
 /* Styling newsletter*/
 
 .newsletter {
-  padding: 2px;
-  max-width: 80%;
-  position: relative;
-  margin-left: 160px;
-  margin-right: 160px;
-  overflow: hidden;
-  text-align: center;
-  z-index: -1;
-  background-color: #ffffff;
-  /*#0E1FB5*/
-  color: black;
+    padding: 2px;
+    max-width: 80%;
+    position: relative;
+    margin-left: 160px;
+    margin-right: 160px;
+    overflow: hidden;
+    text-align: center;
+    z-index: -1;
+    background-color: #ffffff;
+    /*#0E1FB5*/
+    color: black;
 }
 
 /* Styling round corners in blue, purple and no border*/
 
 #p_round_corners {
-  border-radius: 25px;
-  border: 2px solid #9e34b4;
-  padding: 20px;
+    border-radius: 25px;
+    border: 2px solid #9e34b4;
+    padding: 20px;
 }
 
 #w_round_corners {
-  border-radius: 25px;
-  border: 2px solid #ffffff;
+    border-radius: 25px;
+    border: 2px solid #ffffff;
 }
 
 #IG_row {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 body {
-  background-image: url('media/space_gif.gif');
+    background-image: url('media/space_gif.gif');
 }
 
 /* ***************************************************************************** */
 /* STYLES FOR PRACTICAL INFO PAGE */
 
 body {
-  font-family: sans-serif, 'Trebuchet MS', Helvetica;
+    font-family: sans-serif, 'Trebuchet MS', Helvetica;
 }
 
 /* Practical Info description and background*/
 #practical_info {
-  text-align: center;
-  margin-top: 0px;
-  color: white;
+    text-align: center;
+    margin-top: 0px;
+    color: white;
 }
 #practical_info + h2 {
-  width: 690px;
-  text-align: center;
-  font-size: 1em;
-  margin-left: 405px;
-  padding-bottom: 10px;
-  border-bottom: 0.5px solid #505159;
-  color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid #505159;
+    color: white;
 }
 #pinfo_upper {
-  width: 100%;
-  padding-bottom: 50px;
-}
-/* Styles for Images, links and positioning of boxes in 4 upper practical info*/
-.Image {
-  width: 200px;
-  height: 150px;
-  border: 2px solid #9e34b4;
-  margin: 0;
-  border-radius: 15px 0px 0px 15px;
-  background: white;
+    width: 100%;
+    padding-bottom: 50px;
 }
 
-.anchor {
-  color: #6c3483;
-  font-weight: bold;
+
+.info_box {
+    width: 900px;
+    height:167px;
+    margin: 20px auto;
+}
+
+.Image {
+    width: 200px;
+    height:100%;
+    border: 2px solid #9e34b4;
+    margin: 0;
+    border-radius: 15px 0px 0px 15px;
+    background: white;
+    float:left;
+}
+
+.info_box a {
+    color: #6c3483;
+    font-weight: bold;
 }
 
 .side_box {
-  padding-left: 202px;
-  margin-top: -158px;
-}
-/* Dates & Hours */
-
-#dates_hrs_h {
-  width: 500px;
-  border: 2px solid #9e34b4;
-  background: #9e34b4;
-  color: white;
-  margin: 0;
-  border-radius: 0px 15px 0px 0px;
+    padding-left: 200px;
 }
 
-#dates_hrs_p {
-  width: 500px;
-  height: 124.5px;
-  border: 2px solid #9e34b4;
-  background: #f1f1f1;
-  color: black;
-  margin: 0;
-  padding: 0;
-  border-radius: 0px 0px 15px 0px;
+.info_box h3 {
+
+    border: 2px solid #9e34b4;
+    background: #9e34b4;
+    color: white;
+    margin: 0;
+    border-radius: 0px 15px 0px 0px;
+    padding:2px;
+    padding-left:25px;
 }
 
-#info1 {
-  width: 700px;
-  margin: 0 auto;
+.info_box p {
+    height: 123px;
+    border: 2px solid #9e34b4;
+    background: #f1f1f1;
+    color: black;
+    margin: 0;
+    padding: 15px;
+    padding-left:25px;
+    border-radius: 0px 0px 15px 0px;
 }
 
-/* Directions */
 
-#directions_h {
-  width: 500px;
-  border: 2px solid #9e34b4;
-  background: #9e34b4;
-  color: white;
-  margin: 0;
-  border-radius: 0px 15px 0px 0px;
-}
-#directions_p {
-  width: 500px;
-  height: 125px;
-  border: 2px solid #9e34b4;
-  background: #f1f1f1;
-  color: black;
-  margin: 0;
-  padding: 0;
-  border-radius: 0px 0px 15px 0px;
-}
-
-#info2 {
-  width: 700px;
-  margin: 20px auto;
-}
-
-/* Guest Services */
-
-#guest_services_h {
-  width: 500px;
-  border: 2px solid #9e34b4;
-  background: #9e34b4;
-  color: white;
-  margin: 0;
-  border-radius: 0px 15px 0px 0px;
-}
-#guest_services_p {
-  width: 500px;
-  height: 124.5px;
-  border: 2px solid #9e34b4;
-  background: #f1f1f1;
-  color: black;
-  margin: 0;
-  padding: 0;
-  font-size: 17px;
-  border-radius: 0px 0px 15px 0px;
-}
-
-#info3 {
-  width: 700px;
-  margin: 20px auto;
-}
-
-/* Helpful Tips */
-
-#helpful_tips_h {
-  width: 500px;
-  border: 2px solid #9e34b4;
-  background: #9e34b4;
-  color: white;
-  margin: 0;
-  border-radius: 0px 15px 0px 0px;
-}
-#helpful_tips_p {
-  width: 500px;
-  height: 124px;
-  border: 2px solid #9e34b4;
-  background: #f1f1f1;
-  color: black;
-  margin: 0;
-  padding: 0;
-  border-radius: 0px 0px 15px 0px;
-}
-
-#info4 {
-  width: 700px;
-  margin: 0 auto;
-}
 
 /* Ticket Promotion*/
-#specialoffers {
-  margin-top: 0px;
-  padding-top: 0px;
-  padding-bottom: 30px;
+#specialoffers { /*This is the main container holding the three special offers*/
+    margin-top: 0 auto;
+    padding: 30px;
+    width:100%;
+    text-align:center;
+    clear:both;
+}
+
+.ticket_offer { /*This is the container for a single offer*/
+    display: inline-block;
+    vertical-align:top;
+    width: 350px;
+    height: 500px; 
+    margin:20px;
+    border-radius: 15px;
+    border: 2px solid #9e34b4;
+    background: #f1f1f1;
 }
 .offer_Image {
-  width: 250px;
-  height: 200px;
-  margin-left: 50px;
-  margin-top: 20px;
-  border: 1px solid #9e34b4;
+    width: 250px;
+    height: 200px;
+    margin-top:30px;
+    border: 1px solid #9e34b4;
 }
 
 .ticket_offer_p {
-  width: 300px;
-  height: 200px;
-  border: 2px solid #9e34b4;
-  margin-left: 25px;
-  text-align: center;
-  font-size: 20px;
-  padding-top: 20px;
-  margin-bottom: 0px;
-  margin-top: 25px;
-  color: #4a235a;
-  background: white;
+    width: 300px;
+    height: 200px;
+    border: 2px solid #9e34b4;
+    margin-left: 25px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 20px;
+    margin-bottom: 0px;
+    margin-top: 25px;
+    color: #4a235a;
+    background: white;
 }
 
 .button {
-  background-color: #9e34b4;
-  border: 1px solid #9e34b4;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin-left: 5px;
-  margin-top: 25px;
+    background-color: #9e34b4;
+    border: 1px solid #9e34b4;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-top: 25px;
 }
 
-/*Ticket Offer 1*/
-#ticket_offer1 {
-  width: 350px;
-  height: 500px;
-  margin-left: 100px;
-  margin-top: 0px;
-  border-radius: 15px;
-  border: 2px solid #9e34b4;
-  background: #f1f1f1;
-}
+
 #button1 {
-  background-color: #9e34b4;
-  border: 1px solid #9e34b4;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin-left: 5px;
-  margin-top: 65px;
+    background-color: #9e34b4;
+    border: 1px solid #9e34b4;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-top: 65px;
 }
 #ticket_offer1_p {
-  width: 300px;
-  height: 200px;
-  border: 2px solid #9e34b4;
-  margin-left: 25px;
-  text-align: center;
-  font-size: 20px;
-  padding-top: 30px;
-  margin-bottom: 0px;
-  margin-top: 25px;
-  color: #4a235a;
-  background: white;
+    width: 300px;
+    height: 200px;
+    border: 2px solid #9e34b4;
+    margin-left: 25px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 30px;
+    margin-bottom: 0px;
+    margin-top: 25px;
+    color: #4a235a;
+    background: white;
 }
-/*Ticket Offer 2*/
-#ticket_offer2 {
-  width: 350px;
-  height: 500px;
-  margin-left: 575px;
-  margin-top: -500.4px;
-  border-radius: 15px;
-  border: 2px solid #9e34b4;
-  background: #f1f1f1;
-}
-/* Ticket Offer 3*/
-#ticket_offer3 {
-  width: 350px;
-  height: 500px;
-  margin-left: 1050px;
-  margin-top: -500.4px;
-  border-radius: 15px;
-  border: 2px solid #9e34b4;
-  background: #f1f1f1;
-}
+
 
 /* ***************************************************************************** */
 /* STYLES FOR BOOKING PAGE */
 #ticket_price {
-  font-family: sans-serif, 'Roboto Slab', 'Trebuchet MS';
-  color: white;
-  padding: 10px;
-  border-radius: 25px;
-  text-align: center;
+    font-family: sans-serif, 'Roboto Slab', 'Trebuchet MS';
+    color: white;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
 }
 
+
 .tickets_types {
-  border: 3px solid #9e34b4;
-  background-color: white;
-  text-align: center;
-  display: inline-block;
-  width: 22%;
-  padding: 20px;
-  border-radius: 20px;
-  margin: 2em;
+    border: 3px solid #9e34b4;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top; /* Otherwise inline block aligns on the bottom */
+    width: 22%;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 2em;
 }
 .tickets_types img {
-  height: 300px;
-  width: 100%;
-  object-fit: scale-down;
-  overflow: hidden;
+    width: 100%;
+    padding-bottom:25px;
+
 }
 #ticket_price h2 {
-  background: #0e1fb5;
-  border-radius: 4px;
-  padding: 12px;
+    background: #0e1fb5;
+    border-radius: 15px 15px 0px 0px;
+    padding: 12px;
+    margin:0px;
 }
 
 #ticket_price table {
-  color: white;
-  background-color: #0e1fb5;
-  border-collapse: collapse;
-  border-radius: 15px;
-  width: 100%;
-  height: 100px;
+    color: white;
+    background-color: #0e1fb5;
+    border-collapse: collapse;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    height: 100px;
 }
 .price_table th,
 .price_table td {
-  border: 2px solid white;
+    border: 2px solid white;
 }
 .price_table td:hover {
-  background-color: #091475;
+    background-color: #091475;
 }
 
 .details {
-  color: black;
-  text-align: left;
+    color: black;
+    text-align: left;
 }
 .details h3 {
-  text-align: center;
+    text-align: center;
 }
 
 #book_your_ticket {
-  border: 3px solid #9e34b4;
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-top: 50px;
-  margin-bottom: 160px;
-  font-family: sans-serif, 'Roboto Slab', 'Trebuchet MS';
-  color: black;
-  background-color: aliceblue;
-  padding: 50px;
-  border-radius: 25px;
+    border: 3px solid #9e34b4;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 50px;
+    margin-bottom: 160px;
+    font-family: sans-serif, 'Roboto Slab', 'Trebuchet MS';
+    color: black;
+    background-color: aliceblue;
+    padding: 50px;
+    border-radius: 25px;
 }
 
 .select_ticket {
-  background-color: white;
-  width: 30%;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  text-align: center;
-  margin: 5px;
-  padding: 20px;
+    background-color: white;
+    width: 30%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    margin: 5px;
+    padding: 20px;
 }
 .select_ticket table {
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
-  text-align: center;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
 }
 .select_ticket h3 {
-  background-color: #0e1fb5;
-  color: white;
-  padding: 10px;
-  border-radius: 6px;
+    background-color: #0e1fb5;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
 }
 .select_ticket table th,
 td {
-  font-size: 13px;
-  border: 1px solid #ccc;
-  padding: 5px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    padding: 5px;
 }
