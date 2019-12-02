@@ -61,56 +61,74 @@
             </nav>
         </header>
 
-        <h1 id="practical_info">Practical Information</h1>
-        <h2>Here you will find all the information, advice and tips you need to arrange your visit.</h2>
+        </div>
+        
         <!-- This part of the page contains links to relevant information that people can use to plan their trip. -->    
-        <div>
-            <div>
-                <h3>Park Hours</h3>
-                <img src='media/park_hours.png' alt="Park Hours image" width="200"/>
-                <p>Voyager is open every day of the year, even Christmas!</p>
-                <!-- Table containing park opening hours -->
-                <table>
-                    <tr><th>Monday</th><td>10am - 11pm</td></tr>
-                    <tr><th>Tuesday</th><td>10am - 11pm</td></tr>
-                    <tr><th>Wednesday</th><td>10am - 11pm</td></tr>
-                    <tr><th>Thursday</th><td>10am - 11pm</td></tr>
-                    <tr><th>Friday</th><td>10am - 11pm</td></tr>
-                    <tr><th>Saturday</th><td>10am - 11pm</td></tr>
-                    <tr><th>Sunday</th><td>10am - 11pm</td></tr>
-                </table> 
+        <div id="pinfo_upper">
+            <!-- <div id="pinfo_header"> -->
+                <br>
+
+    <h1 id="practical_info">Practical Information</h1>
+    <h2>Here you will find all the information, advice and tips you need to arrange your visit.</h2>
+      
+            <div id="info1">
+                <img class="Image" src='media/park_hours.png' alt="Park Hours image" width="200"/>
+                <div class="side_box">
+                    <h3 id="dates_hrs_h">Dates & Hours</h3>
+                     <p id="dates_hrs_p">Voyager is open every day of the year, even Christmas!
+                    <br>
+                    <a class="anchor" href="More Information">More Information</a>
+                    </p>
+                </div>    
             </div>
 
             <!-- This section contains a link to instructions on how to get to the park -->
-            <div>
-                <a href="Directions"><h3>Directions</h3></a>
-                <img src='media/directions.png' alt="Directions image" width="200"/>
-                <p>
+            <div id="info2">
+                <img class="Image" src='media/directions.png' alt="Directions image" width="200"/>
+                <div class="side_box">
+                     <h3 id="directions_h">Directions</h3>
+                     <p id="directions_p">
                     Want to visit the park by taking a plane, train or automobile. Getting to Voyager is easy
                     whichever one you choose.
-                </p>
+                    <br>
+                    <a class="anchor" href="More Information">More Information</a>
+                     </p>
+                 </div>
             </div>
 
             <!-- This section contains some information about guest services, and a link to learn more. -->
-            <div>
-                <a href=""><h3>Guest Services</h3></a>
-                <img src='media/guest_services.png' alt="Guest Services image" width="200"/>
-                <p>
+            <div id="info3">
+                
+                <img class="Image" src='media/guest_services.png' alt="Guest Services image" width="200"/>
+                <div class="side_box">
+                    <h3 id="guest_services_h">Guest Services</h3>
+                <p id="guest_services_p">
                     Voyager theme park  is committed to providing a safe and enjoyable environment for our guests. 
                     Our services include availability of standard wheelchairs and ECVs, 
                     sign language interpreters, childcare, locker rentals, ATM, First Aid Center, 
-                    senior citizens services. You can learn more in our <a href="">Help Center</a>.
+                    senior citizens services.
+                    <br>
+                     <a class="anchor" href="More Information">More Information</a>
                 </p>
+                    
+                </div>
+                
             </div>
 
             <!-- This section contains a link to a page containing other useful information to help vistors plan their visit -->
-            <div>
-                <a href=""><h3>Helpful Tips</h3></a>
-                <img src='media/helpful_tips.png' alt="Helpful Tips image" width="200"/>
-                <p>
+            <div id="info4">
+                
+                <img class="Image" src='media/helpful_tips.png' alt="Helpful Tips image" width="200"/>
+                <div class="side_box">
+                    <h3 id="helpful_tips_h">Helpful Tips</h3>
+                    <p id="helpful_tips_p">
                     Helpful tips to make your visit more comfortable such as ride accessibility information, 
-                    weather conditions, the best days to visit. More information can be found <a href="">here</a>.
+                    weather conditions, the best days to visit.
+                    <br>
+                    <a class="anchor" href="More Information">More Information</a>
                 </p>
+                </div>
+                
             </div>
         </div>
 
@@ -119,42 +137,42 @@
         <!-- Each of the three promotions has a heading, an image, a description, and a link to the booking page -->
         <div id="specialoffers" class="anchor">
             <!-- Promotion 1-->
-            <div>
-                <h3>Ticket Promotion 1</h3>
-                <img src='media/ticket_offer_1.png' alt="Ticket Promotion 1 image" width="200" />
-                <p>Limited time offer: save 20% on vacation packages!</p>
-                <!-- this code creates the button that links to the booking page -->
-                <form>
-                    <button>Book now</button>
-                </form>
+            <div id="ticket_offer1">
+                <img class="offer_Image" src='media/ticket_offer_1.png' alt="Ticket Promotion 1 image" width="200" />
+                <p id="ticket_offer1_p">Limited time offer: save 20% on vacation packages!
+                <br>
+                      <!-- this code creates the button that links to the booking page --> 
+                    <button id="button1">Book now</button>
+                </p>
+              
             </div>
 
             <!-- Promotion 2-->
-            <div>
-                <h3>Ticket Promotion 2</h3>
-                <img src='media/ticket_offer_2.png' alt="Ticket Promotion 2 image" width="200" />
-                <p>
+           <div id="ticket_offer2">
+            
+                <img class="offer_Image" src='media/ticket_offer_2.png' alt="Ticket Promotion 2 image" width="200" />
+                <p class="ticket_offer_p">
                     Secure a 2020 stay now to receive 30% off per night!
                     15 March - 27 May 2020. Book before 4 January 2020!
+                    <br>
+                      <!-- this code creates the button that links to the booking page --> 
+                    <button class="button">Book now</button>
                 </p>
-                <!-- this code creates the button that links to the booking page -->
-                <form>
-                    <button>Book now</button>
-                </form>
+              
             </div>
 
             <!-- Promotion 3-->
-            <div>
-                <h3>Ticket Promotion 3</h3>
-                <img src='media/ticket_offer_3.png' alt="Ticket Promotion 3 image" width="200" />
-                <p>
+            <div id="ticket_offer3">
+        
+                <img class="offer_Image" src='media/ticket_offer_3.png' alt="Ticket Promotion 3 image" width="200" />
+                <p class="ticket_offer_p">
                     Stay at Voyager cabins for two nights and get third night for free during spring event.
                     Book before 15 December 2019!
+                    <br>
+                      <!-- this code creates the button that links to the booking page --> 
+                    <button class="button">Book now</button>
                 </p>
-                <!-- this code creates the button that links to the booking page -->
-                <form>
-                    <button>Book now</button>
-                </form>
+               
             </div>
         </div>
 

@@ -1,5 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+input[type=text], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=email], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #9E34B4;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #9E00B0;
+}
+</style>
 
     <!--METADATA-->
     <!-- Contribution: Main coding for this page was provided by Laurence Sonnenburg. Content was provided by Kishore Mishra. Additional coding work on the skeleton and header/footer was provided by Kishore Mishra and Kristina Kozaj. Tweaks for validation were done by Hazel O'Keeffe. -->
@@ -17,6 +52,9 @@
         <!-- Adding link to the CSS and JavaScript -->
         <link rel="stylesheet" type="text/css" href="voyager_styles.css">
         <script src="js/getDate.js"></script>
+  
+        
+        
     </head>
 
     <!--Body-->
@@ -61,189 +99,223 @@
             </nav>
         </header>
 
-        <h1>Tickets</h1>
         <!-- This section contains the pricing information for children visiting the park -->
-        <div id="Child">
-            <h2>Children (age 6 to 16)</h2>
-            <a href="#Child"><img src="media/children.png" width="250" alt="Children Pricing Image"></a>
-            <!-- Pricing table -->
-            <table>
-                <tr>
-                    <th>Day pass</th>
-                    <th>2 Days pass</th>
-                    <th>Season pass</th>
-                </tr>
-                <tr>
-                    <td>€ 30 / person</td>
-                    <td>€ 55 / person</td>
-                    <td>€ 140 / person</td>
-                </tr>
-            </table>
-            <!-- Entry conditions are detailed in an unordered list -->
-            <div id="pricing_child">
-                <h3>Details and Conditions:</h3>
-                <ul>
-                    <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.
-                    </li>
-                    <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
-                    </li>
-                    <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.</li>
-                    <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
-                    </li>
-                    <li>Infants and Children must be accompanied by adults aged 21 or over. A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
-                    </li>
-                </ul>
+        <div id="ticket_price">
+            <div class="tickets_types" id="Child">
+                <h2>Children (age 6 to 16)</h2>
+                <a href="#Child"><img src="media/Banner_3.jpg" width="250" alt="Children Pricing Image"></a>
+                <!-- Pricing table -->
+                <div style="text-align:center">
+                <table class="price_table">
+                    <tr>
+                        <th>Day pass</th>
+                        <th>2 Days pass</th>
+                        <th>Season pass</th>
+                    </tr>
+                    <tr>
+                        <td>€ 30 / person</td>
+                        <td>€ 55 / person</td>
+                        <td>€ 140 / person</td>
+                    </tr>
+                </table>
+                </div>
+                <!-- Entry conditions are detailed in an unordered list -->
+                <div class="details" id="pricing_child">
+                    <h3>Details and Conditions:</h3>
+                    <ul>
+                        <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.
+                        </li>
+                        <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
+                        </li>
+                        <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.</li>
+                        <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
+                        </li>
+                        <li>Infants and Children must be accompanied by adults aged 21 or over. A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- This section contains the pricing information for adults visiting the park -->
+            <div class="tickets_types" id="Adult">
+                <h2>Adults (age 17 and over)</h2>
+                <a href="#Adult"><img src="media/review_3.jpg" width="250" alt="Adults Pricing Image"></a>
+                <!-- Pricing table -->
+                <table class="price_table">
+                    <tr>
+                        <th>Day pass</th>
+                        <th>2 Days pass</th>
+                        <th>Season pass</th>
+                    </tr>
+                    <tr>
+                        <td>€50 / person</td>
+                        <td>€75 / person</td>
+                        <td>€160 / person</td>
+                    </tr>
+                </table>
+                <!-- Entry conditions are detailed in an unordered list -->
+                <div class="details" id="pricing_adult">
+                    <h3>Details and Conditions:</h3>
+                    <ul>
+                        <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.
+                        </li>
+                        <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
+                        </li>
+                        <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.</li>
+                        <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
+                        </li>
+                        <li>Infants and Children must be accompanied by adults aged 21 or over. A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- This section contains the pricing information for groups visiting the park -->
+            <div class="tickets_types" id="Groups">
+                <h2>Groups (8 people or more)</h2>
+                <a href="#Groups"><img src="media/group.jpg" width="250" alt="Group Pricing Image"></a>
+                <!-- Pricing table -->
+                <table class="price_table">
+                    <tr>
+                        <th>Day pass</th>
+                        <th>2 Days pass</th>
+                        <th>Season pass</th>
+                    </tr>
+                    <tr>
+                        <td>€40 / person</td>
+                        <td>€45 / person</td>
+                        <td>€130 / person</td>
+                    </tr>
+                </table>
+                <!-- Entry conditions are detailed in an unordered list -->
+                <div class="details" id="pricing_groups">
+                    <h3>Details and Conditions:</h3>
+                    <ul>
+                        <li>Groups enjoy admission for less than the cost of General Admission!
+                        </li>
+                        <li>Minimum size of group must be 8 or more.
+                        </li>
+                        <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.</li>
+                        <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
+                        </li>
+                        <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.
+                        </li>
+                        <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
+                        </li>
+                        <li>A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
 
-        <!-- This section contains the pricing information for adults visiting the park -->
-        <div id="Adult">
-            <h2>Adults (age 17 and over)</h2>
-            <a href="#Adult"><img src="media/adults.png" width="250" alt="Adults Pricing Image"></a>
-            <!-- Pricing table -->
-            <table>
-                <tr>
-                    <th>Day pass</th>
-                    <th>2 Days pass</th>
-                    <th>Season pass</th>
-                </tr>
-                <tr>
-                    <td>€50 / person</td>
-                    <td>€75 / person</td>
-                    <td>€160 / person</td>
-                </tr>
-            </table>
-            <!-- Entry conditions are detailed in an unordered list -->
-            <div id="pricing_adult">
-                <h3>Details and Conditions:</h3>
-                <ul>
-                    <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.
-                    </li>
-                    <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
-                    </li>
-                    <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.</li>
-                    <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
-                    </li>
-                    <li>Infants and Children must be accompanied by adults aged 21 or over. A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- This section contains the pricing information for groups visiting the park -->
-        <div id="Groups">
-            <h2>Groups (8 people or more)</h2>
-            <a href="#Groups"><img src="media/group.png" width="250" alt="Group Pricing Image"></a>
-            <!-- Pricing table -->
-            <table>
-                <tr>
-                    <th>Day pass</th>
-                    <th>2 Days pass</th>
-                    <th>Season pass</th>
-                </tr>
-                <tr>
-                    <td>€40 / person</td>
-                    <td>€45 / person</td>
-                    <td>€130 / person</td>
-                </tr>
-            </table>
-            <!-- Entry conditions are detailed in an unordered list -->
-            <div id="pricing_groups">
-                <h3>Details and Conditions:</h3>
-                <ul>
-                    <li>Groups enjoy admission for less than the cost of General Admission!
-                    </li>
-                    <li>Minimum size of group must be 8 or more.
-                    </li>
-                    <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.</li>
-                    <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
-                    </li>
-                    <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.
-                    </li>
-                    <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
-                    </li>
-                    <li>A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
-                    </li>
-                </ul>
-            </div>
-        </div>
-
+        
+        
+        
+        
+        
+        
         <!-- This section of the page is used for booking tickets -->
         <div id="book_your_ticket">
-            <h2>Book your tickets</h2>
-            <!-- This form is used to collect user inputs. The "type" lets us know what input type is expected, and "required" ensures users fill in all necessary fields. -->
-            <form>
-                <input type="text" placeholder="Full name" id="full_name" required><br><br>
-                <input type="email" placeholder="E-mail address" id="newsletter_email" required><br><br>
-                <input type="text" placeholder="Contact number" id="contact_no" required><br><br>
-                <!-- Users select the quantity and type of children's tickets required (if any) here -->
-                <h3>Child Ticket</h3>
-                <table>
-                    <tr>
-                        <th>Day pass</th>
-                        <th>2 Days pass</th>
-                        <th>Season pass</th>
-                    </tr>
-                    <tr>
-                        <!-- This row of the form allows users to input a quantity for each ticket type. BY default it shows 0 and users can enter numbers in the range 0 - 100. -->
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                    </tr>
-                </table>
+                <h2>Enter your details</h2>
+                <!-- This form is used to collect user inputs. The "type" lets us know what input type is expected, and "required" ensures users fill in all necessary fields. -->
+                <form id="form">
+                    <div id="userID">
+                    <p>Your name:</p>
+                    <input type="text" placeholder="Full name" id="full_name" required>
+                    <p>E-mail address:</p>
+                    <input type="email" placeholder="E-mail address" id="newsletter_email" required>
+                    <p>Contact number:</p>
+                    <input type="text" placeholder="Contact number" id="contact_no" required><br><br>
+                    </div>
+                    <br>
+                    <!-- Users select the quantity and type of children's tickets required (if any) here -->
+                <h2>Select your tickets</h2>
+                    <div class="select_ticket">
+                        <h3>Child </h3>
+                        <table>
+                            <tr>
+                                <th style="font-size: 11px">Day pass</th>
+                                <th style="font-size: 11px">2 Days pass</th>
+                                <th style="font-size: 11px">Season pass</th>
+                            </tr>
+                            <tr>
+                                <!-- This row of the form allows users to input a quantity for each ticket type. BY default it shows 0 and users can enter numbers in the range 0 - 100. -->
+                                <td>
+                                    <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                                </td>
+                                <td>
+                                    <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                                </td>
+                                <td>
+                                    <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 <!-- Users select the quantity and type of adult's tickets required (if any) here -->
-                <h3>Adult Ticket</h3>
-                <table>
-                    <tr>
-                        <th>Day pass</th>
-                        <th>2 Days pass</th>
-                        <th>Season pass</th>
-                    </tr>
-                    <tr>
-                        <!-- This row of the form allows users to input a quantity for each ticket type. BY default it shows 0 and users can enter numbers in the range 0 - 100. -->
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                    </tr>
-                </table>
+                <div class="select_ticket">
+                    <h3>Adult</h3>
+                    <table>
+                        <tr>
+                            <th style="font-size: 11px">Day pass</th>
+                            <th style="font-size: 11px">2 Days pass</th>
+                            <th style="font-size: 11px">Season pass</th>
+                        </tr>
+                        <tr>
+                            <!-- This row of the form allows users to input a quantity for each ticket type. BY default it shows 0 and users can enter numbers in the range 0 - 100. -->
+                            <td>
+                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
                 <!-- Users select the quantity and type of group tickets required (if any) here -->
-                <h3>Group Ticket</h3>
-                <table>
-                    <tr>
-                        <th>Day pass</th>
-                        <th>2 Days pass</th>
-                        <th>Season pass</th>
-                    </tr>
-                    <tr>
-                        <!-- This row of the form allows users to input a quantity for each ticket type. BY default it shows 0 and users can enter numbers in the range 0 - 100. -->
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                        <td>
-                            <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
-                        </td>
-                    </tr>
-                </table>
-                <!--This checkbox requires users to accept the terms and conditions. The required attribute means they cannot proceed without this. -->
-                <input type="checkbox" required>
-                I have read and accept the <a href="">terms and conditions</a>.<br />
+                <div class="select_ticket">
+                    <h3>Group</h3>
+                    <table>
+                        <tr>
+                            <th style="font-size: 11px">Day pass</th>
+                            <th style="font-size: 11px">2 Days pass</th>
+                            <th style="font-size: 11px">Season pass</th>
+                        </tr>
+                        <tr>
+                            <!-- This row of the form allows users to input a quantity for each ticket type. BY default it shows 0 and users can enter numbers in the range 0 - 100. -->
+                            <td>
+                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                    <!--This checkbox requires users to accept the terms and conditions. The required attribute means they cannot proceed without this. -->
+                <br/>
+                <br/>
+                <br/>
+                <input id="checkbox" type="checkbox" required>
+                I have read and accept the <a href="">terms and conditions</a>.
+                <br/>
+                <br/>
                 <!--This button adds the appropriate amount of tickets to the shopping cart, and moves to the payment page. -->
-                <input type="submit" value="Proceed to checkout">
+                <input id="prodeed" type="submit" value="Proceed to checkout">   
             </form>
         </div>
 
