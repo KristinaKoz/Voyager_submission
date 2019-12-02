@@ -165,10 +165,8 @@ nav .dropdown-content {
 /* Styling the footer */
 footer {
     margin-top: 20px;
-    /*
-    background-image: url("media/galaxy.jpg");*/
+    /* Translucent BG colour to differentiate footer */
     background-color: rgba(4,9,54,0.9);
-    */
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -315,6 +313,9 @@ address {
     overflow: hidden;
     text-align: center;
     z-index: -1;
+    border-radius: 25px;
+    border: 2px solid #9e34b4;
+    padding: 20px;
 }
 
 /*Styling container for attractions and customer reviews*/
@@ -344,10 +345,19 @@ address {
     z-index: -1;
 }
 
+.p_round_corners_aside {
+    display: inline-block;
+    max-width: 95%;
+    text-align: justify-all;
+    z-index: -1;
+    border-radius: 25px;
+    border: 2px solid #9e34b4;
+    padding: 20px;
+}
+
 /* Styling newsletter*/
 
 .newsletter {
-    padding: 2px;
     max-width: 80%;
     position: relative;
     margin-left: 160px;
@@ -358,23 +368,30 @@ address {
     background-color: #ffffff;
     /*#0E1FB5*/
     color: black;
-}
-
-/* Styling round corners in blue, purple and no border*/
-
-#p_round_corners {
     border-radius: 25px;
     border: 2px solid #9e34b4;
     padding: 20px;
 }
 
-#w_round_corners {
+/* Styling round corners in blue, purple and no border*/
+
+.p_round_corners {
+    border-radius: 25px;
+    border: 2px solid #9e34b4;
+    padding: 20px;
+}
+
+.w_round_corners {
     border-radius: 25px;
     border: 2px solid #ffffff;
 }
 
-#IG_row {
+.IG_row {
     padding-bottom: 10px;
+}
+
+.IG_row img {
+    width:49%;
 }
 
 body {
@@ -460,7 +477,7 @@ body {
 
 /* Ticket Promotion*/
 #specialoffers { /*This is the main container holding the three special offers*/
-    margin-top: 0 auto;
+    margin: 0 auto;
     padding: 30px;
     width:100%;
     text-align:center;
