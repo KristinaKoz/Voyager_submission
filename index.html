@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="voyager_styles.css">
         <script src="js/getDate.js"></script>
-        <script src="js/slideshowContainer.js"></script>
+        <!-- <script src="js/slideshowContainer.js"></script> -->
 
         <!-- 
 <style>
@@ -112,7 +112,6 @@ font-family: sans-serif, "Roboto Slab", "Trebuchet MS";
         <div id="main_content">
 
             <div id="w_round_corners" class="slideshow-container">
-                <div class="slideshow-inner">
 
                     <div class="mySlides">
                         <img src='./media/Banner_4.jpg' style='width: 100%; text-align: center;' alt="Voyager Banner 4 Black Planet" />
@@ -130,7 +129,9 @@ font-family: sans-serif, "Roboto Slab", "Trebuchet MS";
                         <img src='./media/Banner_3.jpg' style='width: 100%;' alt="Voyager Banner 3 Children Astronaut Costume Photo" />
                     </div>
 
-                </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
 
             </div>
 
@@ -142,6 +143,35 @@ font-family: sans-serif, "Roboto Slab", "Trebuchet MS";
                 <span class="dot" onclick='currentSlide(3)'></span>
                 <span class="dot" onclick='currentSlide(4)'></span>
             </div>
+
+            <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+                </script>
 
             <br>
 
