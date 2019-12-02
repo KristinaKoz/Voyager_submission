@@ -388,6 +388,8 @@ address {
 
 .IG_row {
     padding-bottom: 10px;
+
+    clear:both;
 }
 
 .IG_row img {
