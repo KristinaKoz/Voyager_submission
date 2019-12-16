@@ -2,71 +2,39 @@
 <html lang="en">
 
     <!--METADATA-->
-    <!-- Contribution: Main coding for this page was provided by Laurence Sonnenburg. Content was provided by Kishore Mishra. Additional coding work on the skeleton and header/footer was provided by Kishore Mishra and Kristina Kozaj. Tweaks for validation were done by Hazel O'Keeffe. -->
+    <!-- Contribution: Main coding for this page was provided by Laurence Sonnenburg. Content was provided by Kishore Mishra. Additional coding work on the skeleton and header/footer was provided by Kishore Mishra, Kristina Kozaj, and Kristine Kuprevica. Additional CSS styling was provided by Kristine Kuprevica and Kenjiro Ono. Tweaks for validation were done by Hazel O'Keeffe. -->
 
     <head>
         <title>Voyager | Book your tickets!</title>
         <meta charset="utf-8">
-        <!-- CHECK DESCRIPTION; MISSION STATEMENT, SEO OPTIMIZATION-->
+        <!-- DESCRIPTION; MISSION STATEMENT, SEO OPTIMIZATION-->
         <meta name="description" content="Voyager is Europe's largest Space-themed Amusement Park, featuring a variety of Attractions, from G-Force Rides to Play Areas for Children. We aim to educate, while entertaining our guests.">
         <meta name="author" content="Hazel O'Keeffe, Kenjiro Ono, Kishore Mishra, Kristina Kozaj, Kristine Kuprevica, Laurence Sonnenberg">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="refresh" content="600">
-        <!-- CHECK KEYWORDS, MISSION STATEMENT, SEO OPTIMIZATION-->
+        <!-- KEYWORDS, MISSION STATEMENT, SEO OPTIMIZATION-->
         <meta name="keywords" content="Amusement Park Holidays Family Holidays Children Space Fun">
         <!-- Adding favicon icon -->
         <link rel="shortcut icon" type="image/ico" href="media/favicon.ico" />
-        <!-- Adding link to the CSS and JavaScript -->
+        <!-- Adding link to the CSS, JavaScript and font-->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="voyager_styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
         <script src="js/getDate.js"></script>
-        <style>
-            input[type=text], select {
-                width: 60%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-            }
-            input[type=email], select {
-                width: 60%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-            }
-
-            input[type=submit] {
-                width: 100%;
-                background-color: #9E34B4;
-                color: white;
-                padding: 14px 20px;
-                margin: 8px 0;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            input[type=submit]:hover {
-                background-color: #9E00B0;
-            }
-        </style>
-
+        <script src="js/mySlidesBooking.js"></script>     
     </head>
 
     <!--Body-->
     <body>
+
         <!--THE HEADER CONTAINS THE LOGO, LANGUAGE OPTIONS, SHOPPING CART AND NAVIGATION-->
         <header>
-            <!-- Logo -->
+            <!-- BOX MODELLING USED ACROSS THE WHOLE WEBSITE-->    
+            <!-- ANIMATED AND TRANSFORMED LOGO-->
             <div class="logo_container">
-                <a href="index.html"><img src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
+                <a href="index.html"><img class="w3-animate-opacity" src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
             </div>
-
+            <!-- TRANSFORMED SHOPPING CART AND LANGUAGE OPTIONS BUTTONS-->
             <div class="header_buttons">
                 <a href="booking.html"><img src="media/cart.png" alt="Link to shopping cart" height="40"></a>
                 <!-- This creates a pop up that tells users that more languages will eb available soon -->
@@ -77,14 +45,13 @@
             </div>
             <p class="opening_today">
                 <!-- This piece of code uses a simple JavaScript script to get the current date -->
-                Today is
-                <span id="date_time"></span>.
-                <script>
-                    window.onload = date_time('date_time');
-
-                </script> <br />
-                We are open from <time>10:00</time> to <time>18:00</time>.
+                <span id="date_time"></span>
+                <script>window.onload = date_time('date_time');</script>: <br/>
+                We are open from <time>10:00</time> to <time>23:00</time>.
             </p>
+            <!--5.4. Audio Player-->
+            <audio src="media/Good_Times.mp3" controls="controls" loop="loop" preload="auto">
+            </audio>
 
             <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE-->
             <nav>
@@ -98,135 +65,171 @@
                             <a href="index.html#latest_news">Latest events and news</a>
                         </div>
                     </li>
-                    <li><a href="practical_information.html">Practical information</a></li>
-                    <li><a href="booking.html">Book your ticket</a></li>
+                    <li class="dropdown">
+                        <a href="practical_information.html" class="dropbtn">Practical Information</a>
+                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <div class="dropdown-content">
+                            <a href="practical_information.html#dates_hours">Dates and Hours</a>
+                            <a href="practical_information.html#directions">Directions</a>
+                            <a href="practical_information.html#guest_services">Guest Services</a>
+                            <a href="practical_information.html#helpful_tips">Helpful Tips</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="booking.html" class="dropbtn">Book your Ticket</a>
+                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <div class="dropdown-content">
+                            <a href="booking.html#Child">Children (age 6 to 16)</a>
+                            <a href="booking.html#Adult">Adults (age 17 and over)</a>
+                            <a href="booking.html#Groups">Groups (8 people or more)</a>
+                            <a href="booking.html#book_your_ticket">Book your Ticket</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </header>
 
+        <!-- BOX MODELLING USED ACROSS THE WHOLE WEBSITE-->    
+        <!-- MEDIA STYLING, TRANSFORMED IMAGES, AND ANIMATED BUTTONS-->    
+        <!-- Slideshow -->
         <!-- This section contains the pricing information for children visiting the park -->
-        <div id="ticket_price">
-            <div class="tickets_types" id="Child">
-                <h2>Children <br/> (age 6 to 16)</h2>
-                <img src="media/child.jpg" alt="Children Pricing Image" class="pricing_image">
-                <!-- Pricing table -->
-                <div style="text-align:center">
-                    <table class="price_table">
-                        <tr>
-                            <th>Day pass</th>
-                            <th>2 Days pass</th>
-                            <th>Season pass</th>
-                        </tr>
-                        <tr>
-                            <td>€ 30 / person</td>
-                            <td>€ 55 / person</td>
-                            <td>€ 140 / person</td>
-                        </tr>
-                    </table>
+        <div>
+            <div class="w3-content" style="max-width:1000px">
+                <div class="mySlidesBooking">
+                    <div class="ticket_price">
+                        <div class="tickets_types" id="Child">
+                            <h2>Children <br/> (age 6 to 16)</h2>
+                            <img src="media/child.jpg" alt="Children Pricing Image" class="pricing_image">
+                            <!-- Pricing table -->
+                            <div style="text-align:center">
+                                <table class="price_table">
+                                    <tr>
+                                        <th>Day pass</th>
+                                        <th>2 Days pass</th>
+                                        <th>Season pass</th>
+                                    </tr>
+                                    <tr>
+                                        <td>€ 30 / person</td>
+                                        <td>€ 55 / person</td>
+                                        <td>€ 140 / person</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- Entry conditions are detailed in an unordered list -->
+                            <div class="details" id="pricing_child">
+                                <h3>Details and Conditions:</h3>
+                                <ul>
+                                    <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.</li>
+                                    <li>The 2 Days Pass rate only applies and is valid for two consecutive days.</li>
+                                    <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period from 1 December 2019 to 31 March 2020.</li>
+                                    <li>Price shown is per person incl. VAT, not including optional cancellation insurance.</li>
+                                    <li>Infants and Children must be accompanied by adults aged 21 or over. A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Entry conditions are detailed in an unordered list -->
-                <div class="details" id="pricing_child">
-                    <h3>Details and Conditions:</h3>
-                    <ul>
-                        <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.
-                        </li>
-                        <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
-                        </li>
-                        <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.</li>
-                        <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
-                        </li>
-                        <li>Infants and Children must be accompanied by adults aged 21 or over. A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- This section contains the pricing information for adults visiting the park -->
-            <div class="tickets_types" id="Adult">
-                <h2>Adults <br/> (age 17 and over)</h2>
-                <a href="#Adult"><img src="media/adult.jpg" alt="Adults Pricing Image" class="pricing_image"></a>
-                <!-- Pricing table -->
-                <table class="price_table">
-                    <tr>
-                        <th>Day pass</th>
-                        <th>2 Days pass</th>
-                        <th>Season pass</th>
-                    </tr>
-                    <tr>
-                        <td>€50 / person</td>
-                        <td>€75 / person</td>
-                        <td>€160 / person</td>
-                    </tr>
-                </table>
-                <!-- Entry conditions are detailed in an unordered list -->
-                <div class="details" id="pricing_adult">
-                    <h3>Details and Conditions:</h3>
-                    <ul>
-                        <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.
-                        </li>
-                        <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
-                        </li>
-                        <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.</li>
-                        <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
-                        </li>
-                        <li>Infants and Children must be accompanied by adults aged 21 or over. A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- This section contains the pricing information for groups visiting the park -->
-            <div class="tickets_types" id="Groups">
-                <h2>Groups<br/>(8 people or more)</h2>
-                <img src="media/group.jpg" alt="Group Pricing Image" class="pricing_image">
-                <!-- Pricing table -->
-                <table class="price_table">
-                    <tr>
-                        <th>Day pass</th>
-                        <th>2 Days pass</th>
-                        <th>Season pass</th>
-                    </tr>
-                    <tr>
-                        <td>€40 / person</td>
-                        <td>€45 / person</td>
-                        <td>€130 / person</td>
-                    </tr>
-                </table>
-                <!-- Entry conditions are detailed in an unordered list -->
-                <div class="details" id="pricing_groups">
-                    <h3>Details and Conditions:</h3>
-                    <ul>
-                        <li>Groups enjoy admission for less than the cost of General Admission!
-                        </li>
-                        <li>Minimum size of group must be 8 or more.
-                        </li>
-                        <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.</li>
-                        <li>The 2 Days Pass rate only applies and is valid for two consecutive days.
-                        </li>
-                        <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period December 1st 2019 until March 31st 2020.
-                        </li>
-                        <li>Price shown is per person incl. VAT, not including optional cancellation insurance.
-                        </li>
-                        <li>A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
-                        </li>
-                    </ul>
+
+                <!-- This section contains the pricing information for adults visiting the park -->
+                <div class="mySlidesBooking">
+                    <div class="ticket_price">
+                        <div class="tickets_types" id="Adult">
+                            <h2>Adults <br/> (age 17 and over)</h2>
+                            <a href="#Adult"><img src="media/adult.jpg" alt="Adults Pricing Image" class="pricing_image"></a>
+                            <!-- Pricing table -->
+                            <div style="text-align:center">
+                                <table class="price_table">
+                                    <tr>
+                                        <th>Day pass</th>
+                                        <th>2 Days pass</th>
+                                        <th>Season pass</th>
+                                    </tr>
+                                    <tr>
+                                        <td>€50 / person</td>
+                                        <td>€75 / person</td>
+                                        <td>€160 / person</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- Entry conditions are detailed in an unordered list -->
+                            <div class="details" id="pricing_adult">
+                                <h3>Details and Conditions:</h3>
+                                <ul>
+                                    <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.</li>
+                                    <li>The 2 Days Pass rate only applies and is valid for two consecutive days.</li>
+                                    <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period from 1 December 2019 to 31 March 2020.</li>
+                                    <li>Price shown is per person incl. VAT, not including optional cancellation insurance.</li>
+                                    <li>Infants and Children must be accompanied by adults aged 21 or over. A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- This section contains the pricing information for groups visiting the park -->#
+                <div class="mySlidesBooking">
+                    <div class="ticket_price">
+                        <div class="tickets_types" id="Groups">
+                            <h2>Groups<br/>(8 people or more)</h2>
+                            <img src="media/group.jpg" alt="Group Pricing Image" class="pricing_image">
+                            <!-- Pricing table -->
+                            <div style="text-align:center">
+                                <table class="price_table">
+                                    <tr>
+                                        <th>Day pass</th>
+                                        <th>2 Days pass</th>
+                                        <th>Season pass</th>
+                                    </tr>
+                                    <tr>
+                                        <td>€40 / person</td>
+                                        <td>€45 / person</td>
+                                        <td>€130 / person</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- Entry conditions are detailed in an unordered list -->
+                            <div class="details" id="pricing_groups">
+                                <h3>Details and Conditions:</h3>
+                                <ul>
+                                    <li>Groups enjoy admission for less than the cost of General Admission!</li>
+                                    <li>Minimum size of group must be 8 or more.</li>
+                                    <li>Entry tickets provide free and unlimited admission to all attractions inside Voyager Theme Park, subject to availability on the date of the visit.</li>
+                                    <li>The 2 Days Pass rate only applies and is valid for two consecutive days.</li>
+                                    <li>The Season Pass provides unlimited number of visits to Voyager Theme Park and is valid for the period from 1 December 2019 to 31 March 2020.</li>
+                                    <li>Price shown is per person incl. VAT, not including optional cancellation insurance.</li>
+                                    <li>A proof of age (national identity card, passport, driver’s license or family record book) must be shown for all visitors on the day of visit.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
 
+
+        <!--Path to External JavaScript File (for Automatic Slideshow)-->
+        <script src="js/mySlidesBooking.js"></script>
+
+
+
         <!-- This section of the page is used for booking tickets -->
         <div id="book_your_ticket">
-            <h2>Enter your details</h2>
+            <h2>Enter your Details</h2>
             <!-- This form is used to collect user inputs. The "type" lets us know what input type is expected, and "required" ensures users fill in all necessary fields. -->
             <form id="form">
                 <div id="userID">
-                    <p>Your name:</p>
-                    <input type="text" placeholder="Full name" id="full_name" required>
-                    <p>E-mail address:</p>
-                    <input type="email" placeholder="E-mail address" id="newsletter_email" required>
-                    <p>Contact number:</p>
-                    <input type="text" placeholder="Contact number" id="contact_no" required><br><br>
+                    <p>Your Full Name:</p>
+                    <input type="text" placeholder="Full Name" id="full_name" required>
+                    <p>E-mail Address:</p>
+                    <input type="email" placeholder="E-mail Address" id="newsletter_email" required>
+                    <p>Contact Number:</p>
+                    <input type="text" placeholder="Contact Number" id="contact_no" required><br><br>
                 </div>
                 <br>
                 <!-- Users select the quantity and type of children's tickets required (if any) here -->
@@ -278,7 +281,7 @@
                 </div>
                 <!-- Users select the quantity and type of group tickets required (if any) here -->
                 <div class="select_ticket">
-                    <h3>Group</h3>
+                    <h3>Groups</h3>
                     <table>
                         <tr>
                             <th style="font-size: 11px">Day pass</th>
@@ -288,13 +291,13 @@
                         <tr>
                             <!-- This row of the form allows users to input a quantity for each ticket type. BY default it shows 0 and users can enter numbers in the range 0 - 100. -->
                             <td>
-                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                                <input class="input" type="number" name="quantity" min="0" max="100" value = "0"><br><br>
                             </td>
                             <td>
-                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                                <input class="input" type="number" name="quantity" min="0" max="100" value = "0"><br><br>
                             </td>
                             <td>
-                                <input type="number" name="quantity" min="0" max="100" value = "0"><br><br>
+                                <input class="input" type="number" name="quantity" min="0" max="100" value = "0"><br><br>
                             </td>
                         </tr>
                     </table>
@@ -303,18 +306,17 @@
                 <br/>
                 <br/>
                 <br/>
-                <input id="checkbox" type="checkbox" required>
-                I have read and accept the <a href="">terms and conditions</a>.
+                <input id="checkbox" type="checkbox" required>I have read and accept the <a href="">Terms and Conditions</a>.
                 <br/>
                 <br/>
                 <!--This button adds the appropriate amount of tickets to the shopping cart, and moves to the payment page. -->
-                <input id="prodeed" type="submit" value="Proceed to checkout">   
+                <button class="glow-on-hover" type="button" onclick="window.location.href = 'booking.html';">Proceed to Checkout</button>
             </form>
         </div>
 
-        <!--THE FOOTER CONTAINS A NUMBER OF LINKS TO IMPORTANT PARTS OF THE SITE, SOCIAL MEDIA LINKS AND LEGAL INFORMATION-->
         <footer>
 
+            <!--GRIDS AND COLUMNS--> 
             <!--LINKS TO IMPORTANT INFORMATION-->
             <div class="wrapper">
                 <div id="park_information">
@@ -326,34 +328,13 @@
                                 <div class="accordian_details">
                                     <p>We are open every day, all year long!</p>
                                     <table>
-                                        <tr>
-                                            <th>Monday</th>
-                                            <td>10am - 11pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Tuesday</th>
-                                            <td>10am - 11pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Wednesday</th>
-                                            <td>10am - 11pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Thursday</th>
-                                            <td>10am - 11pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Friday</th>
-                                            <td>10am - 11pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Saturday</th>
-                                            <td>10am - 11pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Sunday</th>
-                                            <td>10am - 11pm</td>
-                                        </tr>
+                                        <tr><th>Monday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Tuesday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Wednesday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Thursday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Friday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Saturday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Sunday</th><td>10:00 - 23:00</td></tr>
                                     </table>
                                 </div>
                             </details>
@@ -362,29 +343,36 @@
                             <details>
                                 <summary>About Us</summary>
                                 <div class="accordian_details">
-                                    <p>"Voyager" is the largest Space-themed Amusement park in Europe. We were established back in 2010, here in a wonderful place, called Greenburg. Every year we are delighted to welcome thousands of Guests from all around the World.</p>
-                                    <p> "Space" is our world. "Space" is the air, which we breathe. "Space" is all around us, here at "Voyager". "Space is the Place"! And our customers, our "Spaciarians", know that. Here they can discover planets, stars, and constellations in our Virtual Reality Planetarium. Moreover, they can experience real reduced gravity and even try out a real space suit in our two Simulators- SpaceWalk and MoonWalk. </p><p>Have you ever wondered how it feels to be on the International Space Station? Well... there is no need to wonder any longer- we have a Space Shuttle, which takes our "Spaciarians" straight to the International Space Station. </p><p>Our youngest "Spaciarians" and their parents will especially love our Lunar Rovers which take you on a mysterious journey straight into the Universe. "Spaciarians" looking for more educational journey can experience our Mars Habitat, which will reveal to you the secrets of the Red Planet. But that's not all! There are three more surprises waiting for you- the Mars Colony Experience, our G-Force Rocket Coaster, and a Zero-Gravity Chamber.</p>
+                                    <p>
+                                        "Voyager" is the largest Space-themed Amusement park in Europe. We were established back in 2010, here in a wonderful place, called Greenburg. Every year we are delighted to welcome thousands of Guests from all around the World.
+                                    </p>
+                                    <p>
+                                        "Space" is our world. "Space" is the air, which we breathe. "Space" is all around us, here at "Voyager". "Space is the Place"! And our customers, our "Spaciarians", know that. Here they can discover planets, stars, and constellations in our Virtual Reality Planetarium. Moreover, they can experience real reduced gravity and even try out a real space suit in our two Simulators- SpaceWalk and MoonWalk.
+                                    </p>
+                                    <p>
+                                        Have you ever wondered how it feels to be on the International Space Station? Well... there is no need to wonder any longer- we have a Space Shuttle, which takes our "Spaciarians" straight to the International Space Station.
+                                    </p>
+                                    <p>
+                                        Our youngest "Spaciarians" and their parents will especially love our Lunar Rovers which take you on a mysterious journey straight into the Universe. "Spaciarians" looking for more educational journey can experience our Mars Habitat, which will reveal to you the secrets of the Red Planet. But that's not all! There are three more surprises waiting for you- the Mars Colony Experience, our G-Force Rocket Coaster, and a Zero-Gravity Chamber.
+                                    </p>
                                     <p>
                                         We employ more than 5000 "Spacemployees", who you will meet not only during your space journey, but also in Auditorium, Garden, Lounge Area, Bar, Restaurant, Shop, Childcare facilities, Locker Rentals, and Parking. We are accessible to everyone, and every year we aim to increase the accessibility of our services.
                                         So, what are you waiting for? Come and join us in this marvelous journey in the "Space". Because...- Yes, you are right! <b>"Space is the Place"!</b>
-                                    </p></div>
+                                    </p>
+                                </div>
                             </details>
                         </li>
-
-
-
 
                         <li>
                             <details>
                                 <summary>Contact Information</summary>
                                 <div class="accordian_details">
-
                                     <p>
                                         <b>Voyager Inc.</b>
                                     </p>
 
-                                    <address>1 Green Road, <br/>Greenburg, Greencountry, <br/>GG11 1000</address><br/>
-                                    <a href="tel:01344556677" class="contact_info">+01(0)344556677</a><br/>&nbsp;<br/>
+                                    <address>1 Green Road, <br />Greenburg, Greencountry, <br />GG11 1000</address><br />
+                                    <a href="tel:01344556677" class="contact_info">+01(0)344556677</a><br />&nbsp;<br />
                                     <a href="info@voyagerpark.com" class="contact_info">info@voyagerpark.com</a>
 
                                 </div>
@@ -424,6 +412,7 @@
                     </div>
                 </div>
 
+                <!-- TRANSFORMED ICONS-->
                 <!--LINKS TO SOCIAL MEDIA SITES, THE APP STORES AND THE MAIN REVIEWS SITES-->
                 <div id="follow_us">
                     <div id="social_media" class="padded_bottom">
@@ -447,5 +436,7 @@
             </div>
             <div class="copyright">Copyright © 2019 Voyager Theme Park</div>
         </footer>
+
     </body>
+
 </html>

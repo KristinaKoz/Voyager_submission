@@ -2,36 +2,41 @@
 <html lang="en">
 
     <!--METADATA-->
-    <!-- Contribution: Main coding for this page was provided by Kenjiro Ono. Content was provided by Kristina Kozaj. Additional coding work on the skeleton and header/footer was provided by Kishore Mishra and Kristina Kozaj. Tweaks for validation were done by Hazel O'Keeffe. -->
+    <!-- Contribution: Main coding for this page was provided by Kenjiro Ono. Content was provided by Kristina Kozaj. Additional coding work on the skeleton and header/footer was provided by
+Kishore Mishra, Kristina Kozaj, and Kristine Kuprevica. CSS styling was provided by Kishore Mishra. Additional styling was provided by Kristine Kuprevica and Kenjiro Ono. Tweaks for validation were done by Hazel O'Keeffe. -->
 
     <head>
         <title>Voyager | Plan your visit</title>
         <meta charset="utf-8">
-        <!-- CHECK DESCRIPTION; MISSION STATEMENT, SEO OPTIMIZATION-->
+        <!-- DESCRIPTION; MISSION STATEMENT, SEO OPTIMIZATION-->
         <meta name="description" content="Voyager is Europe's largest Space-themed Amusement Park, featuring a variety of Attractions, from G-Force Rides to Play Areas for Children. We aim to educate, while entertaining our guests.">
         <meta name="author" content="Hazel O'Keeffe, Kenjiro Ono, Kishore Mishra, Kristina Kozaj, Kristine Kuprevica, Laurence Sonnenberg">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="refresh" content="600">
-        <!-- CHECK KEYWORDS, MISSION STATEMENT, SEO OPTIMIZATION-->
+        <!-- KEYWORDS, MISSION STATEMENT, SEO OPTIMIZATION-->
         <meta name="keywords" content="Amusement Park Holidays Family Holidays Children Space Fun">
         <!-- Adding favicon icon -->
         <link rel="shortcut icon" type="image/ico" href="media/favicon.ico" />
-        <!-- Adding link to the CSS and JavaScript -->
+        <!-- Adding link to the CSS, JavaScript and font-->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="voyager_styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
         <script src="js/getDate.js"></script>
 
     </head>
 
     <!--Body-->
+
     <body>
+
         <!--THE HEADER CONTAINS THE LOGO, LANGUAGE OPTIONS, SHOPPING CART AND NAVIGATION-->
         <header>
-            <!-- Logo -->
+            <!-- BOX MODELLING USED ACROSS THE WHOLE WEBSITE-->    
+            <!-- ANIMATED AND TRANSFORMED LOGO-->
             <div class="logo_container">
-                <a href="index.html"><img src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
+                <a href="index.html"><img class="w3-animate-opacity" src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
             </div>
-
+            <!-- TRANSFORMED SHOPPING CART AND LANGUAGE OPTIONS BUTTONS-->
             <div class="header_buttons">
                 <a href="booking.html"><img src="media/cart.png" alt="Link to shopping cart" height="40"></a>
                 <!-- This creates a pop up that tells users that more languages will eb available soon -->
@@ -42,14 +47,13 @@
             </div>
             <p class="opening_today">
                 <!-- This piece of code uses a simple JavaScript script to get the current date -->
-                Today is
-                <span id="date_time"></span>.
-                <script>
-                    window.onload = date_time('date_time');
-
-                </script> <br />
-                We are open from <time>10:00</time> to <time>18:00</time>.
+                <span id="date_time"></span>
+                <script>window.onload = date_time('date_time');</script>: <br/>
+                We are open from <time>10:00</time> to <time>23:00</time>.
             </p>
+            <!--5.4. Audio Player-->
+            <audio src="media/Good_Times.mp3" controls="controls" loop="loop" preload="auto">
+            </audio>
 
             <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE-->
             <nav>
@@ -63,259 +67,258 @@
                             <a href="index.html#latest_news">Latest events and news</a>
                         </div>
                     </li>
-                    <li><a href="practical_information.html">Practical information</a></li>
-                    <li><a href="booking.html">Book your ticket</a></li>
+                    <li class="dropdown">
+                        <a href="practical_information.html" class="dropbtn">Practical Information</a>
+                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <div class="dropdown-content">
+                            <a href="practical_information.html#dates_hours">Dates and Hours</a>
+                            <a href="practical_information.html#directions">Directions</a>
+                            <a href="practical_information.html#guest_services">Guest Services</a>
+                            <a href="practical_information.html#helpful_tips">Helpful Tips</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="booking.html" class="dropbtn">Book your Ticket</a>
+                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <div class="dropdown-content">
+                            <a href="booking.html#Child">Children (age 6 to 16)</a>
+                            <a href="booking.html#Adult">Adults (age 17 and over)</a>
+                            <a href="booking.html#Groups">Groups (8 people or more)</a>
+                            <a href="booking.html#book_your_ticket">Book your Ticket</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
+
+
+
         </header>
 
-    <!-- This part of the page contains links to relevant information that people can use to plan their trip. -->    
-    <div id="pinfo_upper">
-        <!-- <div id="pinfo_header"> -->
-        <br>
-
-        <h1 id="practical_info">Practical Information</h1>
-        <h2>Here you will find all the information, advice and tips you need to arrange your visit.</h2>
-
-        <div class="info_box">
-            <img class="Image" src='media/park_hours.png' alt="Park Hours image" width="200"/>
-            <div class="side_box">
-                <h3>Dates & Hours</h3>
-                <p>Voyager is open every day of the year, even Christmas!
-                    <br>
-                <a href="">More Information</a>
-
-            </div>    
-        </div>
-
-        <!-- This section contains a link to instructions on how to get to the park -->
-        <div class="info_box">
-            <img class="Image" src='media/directions.png' alt="Directions image" width="200"/>
-            <div class="side_box">
-                <h3 id="directions_h">Directions</h3>
-                <p id="directions_p">
-                    Want to visit the park by taking a plane, train or automobile. Getting to Voyager is easy
-                    whichever one you choose.
-                    <br>
-                    <a href="">More Information</a>
-                </p>
-            </div>
-        </div>
-
-        <!-- This section contains some information about guest services, and a link to learn more. -->
-        <div class="info_box">
-
-            <img class="Image" src='media/guest_services.png' alt="Guest Services image" width="200"/>
-            <div class="side_box">
-                <h3 id="guest_services_h">Guest Services</h3>
-                <p id="guest_services_p">
-                    Voyager theme park  is committed to providing a safe and enjoyable environment for our guests. 
-                    Our services include availability of standard wheelchairs and ECVs, 
-                    sign language interpreters, childcare, locker rentals, ATM, First Aid Center, 
-                    senior citizens services.
-                    <br>
-                    <a href="">More Information</a>
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- This section contains a link to a page containing other useful information to help vistors plan their visit -->
-        <div class="info_box">
-
-            <img class="Image" src='media/helpful_tips.png' alt="Helpful Tips image" width="200"/>
-            <div class="side_box">
-                <h3 id="helpful_tips_h">Helpful Tips</h3>
-                <p id="helpful_tips_p">
-                    Helpful tips to make your visit more comfortable such as ride accessibility information, 
-                    weather conditions, the best days to visit.
-                    <br>
-                    <a class="anchor" href="">More Information</a>
-                </p>
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- This section calls out some special offers to entice customers to visit -->
-    <!-- Each of the three promotions has a heading, an image, a description, and a link to the booking page -->
-    <div id="specialoffers" class="anchor">
-        <!-- Promotion 1-->
-        <div id="ticket_offer1" class="ticket_offer">
-            <img class="offer_Image" src='media/ticket_offer_1.png' alt="Ticket Promotion 1 image" width="200" />
-            <p id="ticket_offer1_p">Limited time offer: save 20% on vacation packages!
-                <br>
-                <!-- this code creates the button that links to the booking page --> 
-                <button id="button1" class="button">Book now</button>
-            </p>
-
-        </div>
-
-        <!-- Promotion 2-->
-        <div id="ticket_offer2" class="ticket_offer">
-
-            <img class="offer_Image" src='media/ticket_offer_2.png' alt="Ticket Promotion 2 image" width="200" />
-            <p class="ticket_offer_p">
-                Secure a 2020 stay now to receive 30% off per night!
-                15 March - 27 May 2020. Book before 4 January 2020!
-                <br>
-                <!-- this code creates the button that links to the booking page --> 
-                <button class="button">Book now</button>
-            </p>
-
-        </div>
-
-        <!-- Promotion 3-->
-        <div id="ticket_offer3" class="ticket_offer">
-
-            <img class="offer_Image" src='media/ticket_offer_3.png' alt="Ticket Promotion 3 image" width="200" />
-            <p class="ticket_offer_p">
-                Stay at Voyager cabins for two nights and get third night for free during spring event.
-                Book before 15 December 2019!
-                <br>
-                <!-- this code creates the button that links to the booking page --> 
-                <button class="button">Book now</button>
-            </p>
-
-        </div>
-    </div>
-
-    <!--THE FOOTER CONTAINS A NUMBER OF LINKS TO IMPORTANT PARTS OF THE SITE, SOCIAL MEDIA LINKS AND LEGAL INFORMATION-->
-    <footer>
-
-        <!--LINKS TO IMPORTANT INFORMATION-->
-        <div class="wrapper">
-            <div id="park_information">
-                <h3>Park information</h3>
-                <ul>
-                    <li>
-                        <details open>
-                            <summary>Opening Hours</summary>
-                            <div class="accordian_details">
-                                <p>We are open every day, all year long!</p>
-                                <table>
-                                    <tr>
-                                        <th>Monday</th>
-                                        <td>10am - 11pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Tuesday</th>
-                                        <td>10am - 11pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Wednesday</th>
-                                        <td>10am - 11pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Thursday</th>
-                                        <td>10am - 11pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Friday</th>
-                                        <td>10am - 11pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Saturday</th>
-                                        <td>10am - 11pm</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Sunday</th>
-                                        <td>10am - 11pm</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </details>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>About Us</summary>
-                            <div class="accordian_details">
-                                <p>"Voyager" is the largest Space-themed Amusement park in Europe. We were established back in 2010, here in a wonderful place, called Greenburg. Every year we are delighted to welcome thousands of Guests from all around the World.</p>
-                                <p> "Space" is our world. "Space" is the air, which we breathe. "Space" is all around us, here at "Voyager". "Space is the Place"! And our customers, our "Spaciarians", know that. Here they can discover planets, stars, and constellations in our Virtual Reality Planetarium. Moreover, they can experience real reduced gravity and even try out a real space suit in our two Simulators- SpaceWalk and MoonWalk. </p><p>Have you ever wondered how it feels to be on the International Space Station? Well... there is no need to wonder any longer- we have a Space Shuttle, which takes our "Spaciarians" straight to the International Space Station. </p><p>Our youngest "Spaciarians" and their parents will especially love our Lunar Rovers which take you on a mysterious journey straight into the Universe. "Spaciarians" looking for more educational journey can experience our Mars Habitat, which will reveal to you the secrets of the Red Planet. But that's not all! There are three more surprises waiting for you- the Mars Colony Experience, our G-Force Rocket Coaster, and a Zero-Gravity Chamber.</p>
-                                <p>
-                                    We employ more than 5000 "Spacemployees", who you will meet not only during your space journey, but also in Auditorium, Garden, Lounge Area, Bar, Restaurant, Shop, Childcare facilities, Locker Rentals, and Parking. We are accessible to everyone, and every year we aim to increase the accessibility of our services.
-                                    So, what are you waiting for? Come and join us in this marvelous journey in the "Space". Because...- Yes, you are right! <b>"Space is the Place"!</b>
-                                </p></div>
-                        </details>
-                    </li>
-
-
-
-
-                    <li>
-                        <details>
-                            <summary>Contact Information</summary>
-                            <div class="accordian_details">
-
-                                <p>
-                                    <b>Voyager Inc.</b>
+        <!-- TRANSFORMED IMAGES -->        
+        <!-- This part of the page contains links to relevant information that people can use to plan their trip. -->
+        <div id="pinfo_upper">
+            <!-- <div id="pinfo_header"> -->
+            <br>
+            <h1 id="practical_info">Practical Information</h1>
+            <h2>Here you will find all the information, advice and tips you need to arrange your visit.</h2>
+            <div id="dates_hours" class="anchor">
+                <div class="info_box">
+                    <img class="Image" src='media/park_hours.png' alt="Park Hours image" width="200"/>
+                    <div class="side_box">
+                        <h3>Dates and Hours</h3>
+                        <p>Voyager is open every day of the year, even during the Christmas Season!
+                            <br>
+                            <a href="">More Information</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- This section contains a link to instructions on how to get to the park -->
+                <div id="directions" class="anchor">
+                    <div class="info_box">
+                        <img class="Image" src='media/directions.png' alt="Directions image" width="200"/>
+                        <div class="side_box">
+                            <h3 id="directions_h">Directions</h3>
+                            <p id="directions_p">
+                                Want to visit the park by taking a plane, train, or automobile.
+                                <br>Getting to Voyager is easy, whichever you choose.
+                                <br>
+                                <a href="">More Information</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- This section contains some information about guest services, and a link to learn more. -->
+                    <div id="guest_services" class="anchor">
+                        <div class="info_box">
+                            <img class="Image" src='media/guest_services.png' alt="Guest Services image" width="200"/>
+                            <div class="side_box">
+                                <h3 id="guest_services_h">Guest Services</h3>
+                                <p id="guest_services_p">
+                                    Voyager theme park  is committed to providing a safe and enjoyable environment for our guests. Our services include availability of standard wheelchairs and ECVs, sign language interpreters, childcare, locker rentals, ATM, First Aid Center, senior citizens services.
+                                    <br>
+                                    <a href="">More Information</a>
                                 </p>
-
-                                <address>1 Green Road, <br/>Greenburg, Greencountry, <br/>GG11 1000</address><br/>
-                                <a href="tel:01344556677" class="contact_info">+01(0)344556677</a><br/>&nbsp;<br/>
-                                <a href="info@voyagerpark.com" class="contact_info">info@voyagerpark.com</a>
-
                             </div>
-                        </details>
-                    </li>
-                </ul>
-            </div>
+                        </div>
+                        <!-- This section contains a link to a page containing other useful information to help vistors plan their visit -->
+                        <div id="helpful_tips" class="anchor">
+                            <div class="info_box">
+                                <img class="Image" src='media/helpful_tips.png' alt="Helpful Tips image" width="200"/>
+                                <div class="side_box">
+                                    <h3 id="helpful_tips_h">Helpful Tips</h3>
+                                    <p id="helpful_tips_p">
+                                        Helpful tips to make your visit more comfortable, such as: ride accessibility information, weather conditions, the best days to visit.
+                                        <br>
+                                        <a class="anchor" href="">More Information</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
 
-            <div id="find_us_and_legal">
-                <div id="location_information" class="padded_bottom">
-                    <h3>How to Find Us</h3>
-                    <ul>
-                        <li><a href="practical_information.html">Directions</a></li>
-                        <li><a href="practical_information.html">Parking</a></li>
-                        <li><a href="practical_information.html">Find Us on Google Maps</a></li>
-                    </ul>
-                </div>
 
-                <div id="more_information" class="padded_bottom">
-                    <h3>Other Important Links</h3>
-                    <ul>
-                        <li><a href="index.html">Help Center</a></li>
-                        <li><a href="index.html">Career Opportunities</a></li>
-                        <li><a href="index.html">Shop Our Merchandise</a></li>
-                    </ul>
-                </div>
-
-                <div id="legal_information">
-                    <h3>Legal Information</h3>
-                    <ul>
-                        <li><a href="">Sitemap</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Cookies</a></li>
-                        <li><a href="">Terms and Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!--LINKS TO SOCIAL MEDIA SITES, THE APP STORES AND THE MAIN REVIEWS SITES-->
-            <div id="follow_us">
-                <div id="social_media" class="padded_bottom">
-                    <h3>Follow Us On</h3>
-                    <a href="https://www.facebook.com"><img src="media/FB.png" width="50" alt="Facebook logo"></a>
-                    <a href="https://www.twitter.com"><img src="media/TW.png" width="50" alt="Twitter logo"></a>
-                    <a href="https://www.instagram.com"><img src="media/IG.png" width="50" alt="Instagram logo"></a>
-                    <a href="https://www.youtube.com"><img src="media/YT.png" width="50" alt="YouTube logo"></a>
-                </div>
-                <div id="App" class="padded_bottom">
-                    <h3>Download Our App</h3>
-                    <a href="https://play.google.com/"><img src="media/android.png" width="50" alt="Google Play logo"></a>
-                    <a href="https://www.apple.com/ios/app-store/"><img src="media/apple.png" width="50" alt="Apple App Store logo"></a>
-                </div>
-                <div id="Reviews" class="padded_bottom">
-                    <h3>Our Reviews</h3>
-                    <a href="https://www.tripadvisor.com/"><img src="media/tripadvisor_logo.png" width="100" alt="TripAdvisor logo"></a>
-                    <a href="https://www.abta.com/"><img src="media/abta_logo.png" width="100" alt="ABTA logo"></a>
+                        <!-- TRANSFORMED PROMOTIONS AND ANIMATED BUTTONS-->
+                        <!-- This section calls out some special offers to entice customers to visit -->
+                        <!-- Each of the three promotions has a heading, an image, a description, and a link to the booking page and is styled-->
+                        <div id="specialoffers" class="anchor">
+                            <!-- Promotion 1-->
+                            <div id="ticket_offer1" class="ticket_offer">
+                                <img class="offer_Image" src='media/ticket_offer_1.png' alt="Ticket Promotion 1 image" width="200" />
+                                <p id="ticket_offer1_p">Limited time offer: save 20% on all vacation packages!<br> Book before 4 January to 10 January2020!
+                                    <br>
+                                    <!-- This code creates the button that links to the booking page -->
+                                    <button class="glow-on-hover" type="button" onclick="window.location.href = 'booking.html#book_your_ticket';">Book now</button>
+                                </p>
+                            </div>
+                            <!-- Promotion 2-->
+                            <div id="ticket_offer2" class="ticket_offer">
+                                <img class="offer_Image" src='media/ticket_offer_2.png' alt="Ticket Promotion 2 image" width="200" />
+                                <p class="ticket_offer_p">
+                                    Secure a 2020 stay now to receive 30% off per night! <br> 15 March - 27 May 2020. <br> Book before 4 January 2020!
+                                    <br>
+                                    <!-- This code creates the button that links to the booking page --> 
+                                    <button class="glow-on-hover" type="button" onclick="window.location.href = 'booking.html#book_your_ticket';">Book now</button>
+                                </p>
+                            </div>
+                            <!-- Promotion 3-->
+                            <div id="ticket_offer3" class="ticket_offer">
+                                <img class="offer_Image" src='media/ticket_offer_3.png' alt="Ticket Promotion 3 image" width="200" />
+                                <p class="ticket_offer_p">
+                                    Stay at our cabins for two nights and get third night for free. Book before 15 December 2019!
+                                    <br>
+                                    <!-- This code creates the button that links to the booking page -->
+                                    <button class="glow-on-hover" type="button" onclick="window.location.href = 'booking.html#book_your_ticket';">Book now</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="copyright">Copyright © 2019 Voyager Theme Park</div>
-    </footer>
+
+
+        <footer>
+
+            <!--GRIDS AND COLUMNS--> 
+            <!--LINKS TO IMPORTANT INFORMATION-->
+            <div class="wrapper">
+                <div id="park_information">
+                    <h3>Park information</h3>
+                    <ul>
+                        <li>
+                            <details open>
+                                <summary>Opening Hours</summary>
+                                <div class="accordian_details">
+                                    <p>We are open every day, all year long!</p>
+                                    <table>
+                                        <tr><th>Monday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Tuesday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Wednesday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Thursday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Friday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Saturday</th><td>10:00 - 23:00</td></tr>
+                                        <tr><th>Sunday</th><td>10:00 - 23:00</td></tr>
+                                    </table>
+                                </div>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary>About Us</summary>
+                                <div class="accordian_details">
+                                    <p>
+                                        "Voyager" is the largest Space-themed Amusement park in Europe. We were established back in 2010, here in a wonderful place, called Greenburg. Every year we are delighted to welcome thousands of Guests from all around the World.
+                                    </p>
+                                    <p>
+                                        "Space" is our world. "Space" is the air, which we breathe. "Space" is all around us, here at "Voyager". "Space is the Place"! And our customers, our "Spaciarians", know that. Here they can discover planets, stars, and constellations in our Virtual Reality Planetarium. Moreover, they can experience real reduced gravity and even try out a real space suit in our two Simulators- SpaceWalk and MoonWalk.
+                                    </p>
+                                    <p>
+                                        Have you ever wondered how it feels to be on the International Space Station? Well... there is no need to wonder any longer- we have a Space Shuttle, which takes our "Spaciarians" straight to the International Space Station.
+                                    </p>
+                                    <p>
+                                        Our youngest "Spaciarians" and their parents will especially love our Lunar Rovers which take you on a mysterious journey straight into the Universe. "Spaciarians" looking for more educational journey can experience our Mars Habitat, which will reveal to you the secrets of the Red Planet. But that's not all! There are three more surprises waiting for you- the Mars Colony Experience, our G-Force Rocket Coaster, and a Zero-Gravity Chamber.
+                                    </p>
+                                    <p>
+                                        We employ more than 5000 "Spacemployees", who you will meet not only during your space journey, but also in Auditorium, Garden, Lounge Area, Bar, Restaurant, Shop, Childcare facilities, Locker Rentals, and Parking. We are accessible to everyone, and every year we aim to increase the accessibility of our services.
+                                        So, what are you waiting for? Come and join us in this marvelous journey in the "Space". Because...- Yes, you are right! <b>"Space is the Place"!</b>
+                                    </p>
+                                </div>
+                            </details>
+                        </li>
+
+                        <li>
+                            <details>
+                                <summary>Contact Information</summary>
+                                <div class="accordian_details">
+                                    <p>
+                                        <b>Voyager Inc.</b>
+                                    </p>
+
+                                    <address>1 Green Road, <br />Greenburg, Greencountry, <br />GG11 1000</address><br />
+                                    <a href="tel:01344556677" class="contact_info">+01(0)344556677</a><br />&nbsp;<br />
+                                    <a href="info@voyagerpark.com" class="contact_info">info@voyagerpark.com</a>
+
+                                </div>
+                            </details>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div id="find_us_and_legal">
+                    <div id="location_information" class="padded_bottom">
+                        <h3>How to Find Us</h3>
+                        <ul>
+                            <li><a href="practical_information.html">Directions</a></li>
+                            <li><a href="practical_information.html">Parking</a></li>
+                            <li><a href="practical_information.html">Find Us on Google Maps</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="more_information" class="padded_bottom">
+                        <h3>Other Important Links</h3>
+                        <ul>
+                            <li><a href="index.html">Help Center</a></li>
+                            <li><a href="index.html">Career Opportunities</a></li>
+                            <li><a href="index.html">Shop Our Merchandise</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="legal_information">
+                        <h3>Legal Information</h3>
+                        <ul>
+                            <li><a href="">Sitemap</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="">Cookies</a></li>
+                            <li><a href="">Terms and Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TRANSFORMED ICONS-->
+                <!--LINKS TO SOCIAL MEDIA SITES, THE APP STORES AND THE MAIN REVIEWS SITES-->
+                <div id="follow_us">
+                    <div id="social_media" class="padded_bottom">
+                        <h3>Follow Us On</h3>
+                        <a href="https://www.facebook.com"><img src="media/FB.png" width="50" alt="Facebook logo"></a>
+                        <a href="https://www.twitter.com"><img src="media/TW.png" width="50" alt="Twitter logo"></a>
+                        <a href="https://www.instagram.com"><img src="media/IG.png" width="50" alt="Instagram logo"></a>
+                        <a href="https://www.youtube.com"><img src="media/YT.png" width="50" alt="YouTube logo"></a>
+                    </div>
+                    <div id="App" class="padded_bottom">
+                        <h3>Download Our App</h3>
+                        <a href="https://play.google.com/"><img src="media/android.png" width="50" alt="Google Play logo"></a>
+                        <a href="https://www.apple.com/ios/app-store/"><img src="media/apple.png" width="50" alt="Apple App Store logo"></a>
+                    </div>
+                    <div id="Reviews" class="padded_bottom">
+                        <h3>Our Reviews</h3>
+                        <a href="https://www.tripadvisor.com/"><img src="media/tripadvisor_logo.png" width="100" alt="TripAdvisor logo"></a>
+                        <a href="https://www.abta.com/"><img src="media/abta_logo.png" width="100" alt="ABTA logo"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">Copyright © 2019 Voyager Theme Park</div>
+        </footer>
+
     </body>
+
 </html>
