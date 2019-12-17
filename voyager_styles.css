@@ -1,7 +1,6 @@
 /* CUSTOM FONTS */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
-/* NOTE - Fascinate is not the correct Font from the Logo, but the closest I could find */
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Roboto+Slab&display=swap');
 
 /* ***************************************************************************** */
 /* Contributions: */
@@ -16,12 +15,12 @@
 
 
 
-/* The Header consists of the Logo (it fades-in, each time a new page is opened), current Opening Times, Language, Shopping Cart, and Navigation Bar. It is fixed to the top of the page and stays there, when the user scrolls. */
+/* The Header consists of the Logo, current Opening Times, Language, Shopping Cart, Music controls and Navigation Bar. It is fixed to the top of the page and stays there, when the user scrolls. */
 header {
     overflow: visible;
     background-color: white;
     position: sticky;
-/* Set the Navigation Bar to fixed position */
+    /* Set the Navigation Bar to fixed position */
     top: 0;
     width:100%;
     z-index:100;
@@ -36,27 +35,34 @@ header {
 }
 
 
-.logo_container img:hover{
-    transform: scale(1.1,1.1);
-}
-
-
 .logo {
     width: 100%;
     text-align: center;
 }
 
+/* Style and place the Header buttons */
+.header_buttons_right {
+    position: absolute;
+    top: 58px;
+    right: 50px;
+}
+.header_buttons_left {
+    position: absolute;
+    top: 58px;
+    left: 50px;
+    cursor: pointer;
+}
 
 /* Style and place the Opening Times text */
 .opening_today {
     font-family: "Roboto Slab", "Arial", Serif;
     color: #091475;
-    padding-left: 30px;
+    padding-left: 110px;
     position: absolute;
-    top: 50px;
+    top: 45px;
     text-align: left;
+    z-index: -1;
 }
-
 
 .opening_today span {
     text-transform: uppercase;
@@ -64,52 +70,47 @@ header {
     color: #091475;
 }
 
-
-/* Style and place the Header buttons */
-.header_buttons {
-    position: absolute;
-    top: 58px;
-    right: 50px;
-}
-
-
-.header_buttons img {
 /* Adds padding around the individual Header buttons */
+.header_buttons_right img {
+    padding: 1px;
+}
+.header_buttons_left img {
     padding: 1px;
 }
 
+/* This adds the scaling effect to the header buttons on the right */
+.header_buttons_right :hover{
+    transform: scale(1.1,1.1);
+}
 
+/* The tool tip is used to show a pop up informing users that more languages are coming soon */
 .tooltip {
     position: relative;
     display: inline-block;
     cursor: pointer;
 }
 
-
-.header_buttons :hover{
-    transform: scale(1.1,1.1);
-}
-
-
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: #9e34b4;
+    font-size:smaller;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
+    padding: 5px;
     border-radius: 6px;
     position: absolute;
     top: 100%;
     left: 50%;
     margin-left: -60px;
+    margin-top:5px;
     z-index: 1;
 }
-
 
 /* Show the Tooltip text, when you hover over the Flag icon */
 .tooltip:hover .tooltiptext {
     visibility: visible;
+    transform: scale(1,1);
 }
 
 
@@ -122,19 +123,16 @@ nav ul {
     background-color: #0e1fb5;
 }
 
-
 nav li {
     float: left;
     width: 33%;
 }
 
-
 nav li:nth-child(2) {
-/* A slight hack-around- to get the Navigation Bar to equal 100% - set the second li to 34%, while the rest stay at 33% */
+    /* A slight hack-around- to get the Navigation Bar to equal 100% - set the second li to 34%, while the rest stay at 33% */
     float: left;
     width: 34%;
 }
-
 
 nav li a,
 .dropbtn {
@@ -146,20 +144,17 @@ nav li a,
     text-decoration: none;
 }
 
-
 nav li a:hover,
 .dropdown:hover .dropbtn {
     background-color: #091475;
 }
 
-
 nav li.dropdown {
     display: inline-block;
 }
 
-
 nav .dropdown-content {
-/* Styles the dropdown element */
+    /* Styles the dropdown element */
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -170,7 +165,7 @@ nav .dropdown-content {
 
 
 .dropdown-content a {
-/* Styles text and appearance of links in dropdown */
+    /* Styles text and appearance of links in dropdown */
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -181,33 +176,33 @@ nav .dropdown-content {
 
 
 .dropdown-content a:hover {
-/* Changes colour of dropdown element being hovered over */
+    /* Changes colour of dropdown element being hovered over */
     background-color: #f1f1f1;
 }
 
 
 .dropdown:hover .dropdown-content {
-/* Displays the dropdown content on hover */
+    /* Displays the dropdown content on hover */
     display: block;
 }
 
 
 .anchor {
-/* This is to fix the anchor display issue, caused by having a sticky Header */
-    padding-top: 210px;
-    margin-top: -210px;
+    /* This is to fix the anchor display issue, caused by having a sticky Header */
+    padding-top: 390px;
+    margin-top: -390px;
 }
 
 
 /* Styling the Footer */
 footer {
     margin-top: 20px;
-/* Translucent BG colour to differentiate Footer */
+    /* Translucent BG colour to differentiate Footer */
     background-color: rgba(4,9,54,0.9);
     width: 100%;
     background-size: cover;
     background-position: center;
-/* Center the image */
+    /* Center the image */
     background-repeat: no-repeat;
     color: white;
     font-family: "Roboto Slab", "Arial", Serif;
@@ -335,127 +330,372 @@ p {
 /* The dots of the Main Automatic Slideshow were fixed by Kristine Kuprevica. */
 /* Button was styled by Kristine Kuprevica and Kenjiro Ono. */
 /* Slideshow to Social Media Feed was added by Kristine Kuprevica. */
-
+/* Clean up, merges of file version and validation fixes added by Hazel O'Keeffe */
 
 
 /********** STYLES FOR INDEX **********/
 
+h3 {
+    text-align: left;
+}
 
+h4 {
+    font-size: 20px;
+    text-align: left;
+}
 
-/*Styling for Slideshow container*/
+/* Styling for slideshow container*/
 .slideshow-container {
     border-radius: 25px;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 20px;
     position: relative;
-    margin-top: -50px;
-    margin-left: 170px;
-    margin-right: 170px;
+    max-width: auto/3;
+    max-height: 560px;
+    min-width: 300px;
+    min-height: auto;
     overflow: hidden;
     text-align: center;
-    border: 2px solid #9e34b4;
     z-index: -1;
-    transform: scale(0.7,0.7);
+    border-radius: 25px;
 }
-  
 
-.mySlides {
+.favorite-attractions img {
     display: block;
-    width: 100%;
-   
+    max-width: 100%;
+    height: auto;
 }
 
+.contain {
+    object-fit: contain;
+}
 
-.contain {object-fit: contain;}
+/*Styling navigation points under slideshow container*/
+.point {
+    height: 15px;
+    width: 15px;
+    margin: 10px 4px;
+    background-color: #9E34B4;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
 
+.active {
+    background-color: #fff0f5;
+}
 
-/*Styling Navigation Dots under Slideshow container*/
-.dot {
-  height: 15px;
-  width: 15px;
-  margin:  2px;
-  background-color: #9E34B4;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+.point-container {
+    text-align: center;
+    align-content: flex-end;
 }
 
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
-
-
-/* On hover, add a black background color with some opacity */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
 
 .active {
-  background-color: #fff0f5;
+    background-color: #fff0f5;
 }
 
 
 /* Styling the Mission Statement container */
 .mission {
-    padding: 2px;
-    max-width: 80%;
-    position: relative;
-    margin-left: 160px;
-    margin-right: 160px;
+    display: grid;
+    grid-template-columns: auto;
+    margin-left: 120px;
+    margin-right: 120px;
     overflow: hidden;
-    text-align: center;
     z-index: -1;
     border-radius: 25px;
-    border: 2px solid #9e34b4;
-    padding: 20px;
+    padding: 10px;
+    background: rgb(0, 0, 205); /* Fallback for older browsers without RGBA-support */
+    background: rgba(0, 0, 205, 0.7);
 }
 
+.mission p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Roboto Slab", "Arial", Serif;
+    padding-left:20px;
+    padding-right:20px;
+}
 
-/*Styling container for Attractions and Customer Reviews*/
+/*Styling container for attractions and customer reviews*/
 .home_wrapper {
     display: grid;
-    grid-template-columns: 68% 30%;
-    margin-left: 160px;
-    margin-right: 160px;
-    column-gap: 60px;
+    grid-template-columns: 68% auto;
+    margin-left: 120px;
+    margin-right: 120px;
+    overflow: hidden;
     z-index: -1;
     text-align: justify;
 }
-
 
 .home_content {
     display: inline-block;
     max-width: 100%;
     z-index: -1;
+    text-align: justify-all;
 }
 
 
-/*Styling container for Latest News and Social Media Feed*/
-.aside {
+/* Styling attractions */
+.our-favorite-space-adventures {
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    clear: both;
     display: inline-block;
-    max-width: 95%;
+    max-width: 100%;
+    max-height: 100%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding:20px 20px 0px 20px;
+}
+
+.gradient_heading {
+    font-family: 'Luckiest Guy', cursive;
+    font-size:25px;
+    padding-bottom:10px;
+    color: #0e1fb5;
+    /* adds a gradient colour to the text*/
+    background: linear-gradient(#0e1fb5, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.attraction_container {
+    overflow: auto;
+    padding-bottom:25px;
+}
+
+.attraction_image_holder {
+    width:30%;
+    max-width:100%;
+    max-height:100%;
+    float:left;
+    display:inline-block;
+}
+
+.attraction_image_holder img{
+    max-width:100%;
+    max-height:100%;
+    border-radius: 25px;
+}
+
+.attraction_description {
+    width:70%;
+    float:left;
+    padding:0px 10px 0px 30px;
+}
+
+.attraction_description h4 {
+    font-family: "Roboto Slab", "Arial", Serif;
+    font-weight:bold;
+    margin-top: 0px;
+}
+
+/* Styling customer reviews*/
+.customer_reviews {
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    clear: both;
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: justify;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    z-index: -1;
+    /*    border: 2px solid #9e34b4;*/
+    padding: 20px;
+}
+
+/* Change colour of our SVGs to match the site palette */
+.full_star {
+    fill: #9e34b4;
+}
+
+.open_star {
+    fill: #9e34b4;
+}
+
+.review_container {
+    overflow: auto;
+    display: inline-block;
+    clear: both;
+}
+
+.review_image_holder {
+    width:20%;
+    max-width:100%;
+    max-height:100%;
+    float:left;
+}
+
+.review_image_holder img{
+    max-width:100%;
+    max-height:100%;
+    border-radius: 25px;
+}
+
+.review_copy {
+    padding:0px 25px 0px 25px;
+    width:80%;
+    float:left;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.stars {
+    padding-bottom:10px;
+}
+
+
+/*Styling container for latest news and social media feed*/
+.latest-news-and-events {
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    clear: both;
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
     text-align: justify;
     z-index: -1;
+    margin-left: 20px;
+    padding:20px 20px 0px 20px;
+}
+
+.news_image_holder {
+    width:100%;
+    display:inline-block;
+}
+
+.news_image_holder img {
+    width:100%;
+    height:100%;
+    border-radius: 25px;
+}
+
+.attraction_image_holder img{
+    max-width:100%;
+    max-height:100%;
+    border-radius: 25px;
+}
+
+.news_item a {
+    font-weight: bold;
+}
+
+.news_item a:hover {
+    color: #9e34b4;
 }
 
 
-h4 {
+.news_item h4 {
+    font-family: "Roboto Slab", "Arial", Serif;
+    font-weight:bold;
+    margin-top: 0px;
+}
+
+
+/* Styling social media feed*/
+.social-media-feed {
+    clear: both;
+    display: inline-block;
+    -height: 100%;
+    max-height: 100%;
+    text-align: justify;
+    margin-left: 20px;
+    margin-top:30px;
+    z-index: -1;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: white;
+}
+
+.social_media_header {
+    overflow: auto;
+    display: inline-block;
+    clear: both;
+}
+.instagram_logo_holder {
+
+    width:15%;
+    max-width:100%;
+    max-height:100%;
+    float:left;
+}
+
+.instagram_logo_holder img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.social_media_header p{
+    padding-left:20px;
+    margin-top:0px;
+    width:80%;
+    float:left;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.instagram_container {
+    margin: auto;
+    width:100%;
+    display:inline-block;
+
     text-align: center;
 }
 
-
 .mySlidesInstagram {
-    position: relative;
-    border-radius: 45px;
-    border: 2px solid #ffffff;
-    display: block;
-    margin-left: -195px;
-    margin-right: 20px; 
-    width: 400px;
-    height: 400px;
+    text-align: center;
+    margin: auto;
+    width:100%;
+    max-height:100%;
+    border-radius: 25px;
+}
+
+/* Styling newsletter*/
+.newsletter {
+    display: grid;
+    grid-template-columns: auto;
+    max-width: 100%;
+    margin-left: 120px;
+    margin-right: 120px;
+    overflow: hidden;
+    text-align: center;
+    z-index: -1;
+    background: rgb(158, 52, 180); /* Fallback for older browsers without RGBA-support */
+    background: rgba(158, 52, 180, 0.85);
+    color: white;
+    border-radius: 25px;
     padding: 20px;
+}
+
+
+.newsletter h3 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size:25px;
+    color: white;
+}
+
+.entry_fields {
+    display: grid;
+    grid-template-columns: 50% auto;
+    column-gap: 30px;
+    padding:0px 30px 20px 30px;
+}
+
+.tickboxes {
+    padding:0px 30px 20px 30px;
 }
 
 
@@ -464,23 +704,6 @@ h4 {
     max-width: 95%;
     text-align: justify;
     z-index: -1;
-    border-radius: 25px;
-    border: 2px solid #9e34b4;
-    padding: 20px;
-}
-
-
-/* Styling Newsletter*/
-.newsletter {
-    max-width: 100%;
-    position: relative;
-    margin-left: 160px;
-    margin-right: 160px;
-    overflow: hidden;
-    text-align: center;
-    background-color: #ffffff;
-    /*#0E1FB5*/
-    color: black;
     border-radius: 25px;
     border: 2px solid #9e34b4;
     padding: 20px;
@@ -569,10 +792,10 @@ body {
     float:left;
 }
 
-
+/*
 .Image:hover{
-    transform: scale(1.1,1.1);
-}
+transform: scale(1.1,1.1);
+}*/
 
 
 /* Styling contents- text*/
@@ -652,10 +875,10 @@ body {
 
 @keyframes shake {
     0% {
-    transform: skewY(20deg);
+        transform: skewY(20deg);
     }
     100% {
-    transform: skewY(-20deg);
+        transform: skewY(-20deg);
     }
 }
 
@@ -722,7 +945,7 @@ body {
     padding: 20px;
     border-radius: 20px;
     margin: 2em;
-    
+
 }
 
 
@@ -900,8 +1123,10 @@ td {
     height: 50px;
     border: none;
     outline: none;
-    color: #fff;
-    background: #111;
+    color: #002bff;
+    font-weight:bold;
+    text-transform: uppercase;
+    background-color: white;
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -948,7 +1173,7 @@ td {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #9e34b4;
+    background: white;
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -956,7 +1181,7 @@ td {
 
 /* Currently an issue with this that needs to be resolved.
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+0% { background-position: 0 0; }
+50% { background-position: 400% 0; }
+100% { background-position: 0 0; }
 */

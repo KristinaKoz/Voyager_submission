@@ -2,7 +2,7 @@
 <html lang="en">
 
     <!--METADATA-->
-    <!-- Contribution: Main HTML coding for this page was provided by Kristine Kuprevica. A number of people provided content including Hazel O'Keeffe, Kristina Kozaj and Kristine Kuprevica. Additional coding work on the skeleton and header/footer was provided by Kishore Mishra, Kristine Kuprevica, and Kenjiro Ono. Main CSS styling was provided by Kristina Kozaj. Main stylinf for the Header and Footer was provided by Hazel O'Keeffe. Additional CSS styling was provided by Kristine Kuprevica and Kenjiro Ono. Tweaks for validation were done by Hazel O'Keeffe. -->
+    <!-- Contribution: Main HTML coding for this page was provided by Kristine Kuprevica. A number of people provided content including Hazel O'Keeffe, Kristina Kozaj and Kristine Kuprevica. Additional coding work on the skeleton and header/footer was provided by Kishore Mishra, Kristine Kuprevica, and Kenjiro Ono. Main CSS styling was provided by Kristina Kozaj. Main layout and styling for the Header and Footer was provided by Hazel O'Keeffe. Additional CSS styling was provided by Kristine Kuprevica and Kenjiro Ono. Tweaks for validation were done by Hazel O'Keeffe. -->
 
 
     <head>
@@ -22,22 +22,18 @@
         <link rel="stylesheet" type="text/css" href="voyager_styles.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
         <script src="js/getDate.js"></script>
-
     </head>
 
     <!--Body-->
-
     <body>
 
         <!--THE HEADER CONTAINS THE LOGO, LANGUAGE OPTIONS, SHOPPING CART AND NAVIGATION-->
         <header>
-            <!-- BOX MODELLING USED ACROSS THE WHOLE WEBSITE-->    
-            <!-- ANIMATED AND TRANSFORMED LOGO-->
             <div class="logo_container">
-                <a href="index.html"><img class="w3-animate-opacity" src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
+                <a href="index.html"><img src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
             </div>
             <!-- TRANSFORMED SHOPPING CART AND LANGUAGE OPTIONS BUTTONS-->
-            <div class="header_buttons">
+            <div class="header_buttons_right">
                 <a href="booking.html"><img src="media/cart.png" alt="Link to shopping cart" height="40"></a>
                 <!-- This creates a pop up that tells users that more languages will be available soon -->
                 <div class="tooltip">
@@ -45,15 +41,20 @@
                     <span class="tooltiptext">More languages coming soon!</span>
                 </div>
             </div>
+            <!--5.4. Audio Player-->
+            <audio src="media/Good_Times.mp3" id="player" loop="loop" preload="auto">
+            </audio>
+            <div class="header_buttons_left"> 
+                <a onclick = "togglePlay()"><img src="media/playbtn.png" id="musicButton" height="40" alt="control button for music"></a>
+                <script src="js/musicPlayer.js"></script>
+            </div>
             <p class="opening_today">
                 <!-- This piece of code uses a simple JavaScript script to get the current date -->
                 <span id="date_time"></span>.
                 <script>window.onload = date_time('date_time');</script>:<br/>
                 We are open from <time>10:00</time> to <time>23:00</time>.
             </p>
-            <!--5.4. Audio Player-->
-            <audio src="media/Good_Times.mp3" controls="controls" loop="loop" preload="auto">
-            </audio>
+
 
             <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE-->
             <nav>
@@ -91,37 +92,34 @@
             </nav>
         </header>
 
-        <!-- BOX MODELLING USED ACROSS THE WHOLE WEBSITE-->  
-        <!-- MEDIA STYLING-->
-        <!-- TRANSFORMED MAIN AUTOMATIC SLIDESHOW CAROUSEL-->
         <!--1 Main Automatic Slideshow Carousel Container-->
         <!--1.1. Slideshow Container-->
-
         <div id="main_content">
             <div class="slideshow-container">
                 <div class="slideshow-inner">
-                    <div class="mySlides">
-                        <img src='./media/Banner_4.jpg' style='width: 100%; text-align: center;' alt="Voyager Banner 4 Black Planet" />
+                    <div class="favorite-attractions">
+                        <img src='./media/Banner_4.jpg' alt="Voyager Banner 4 Black Planet" />
                     </div>
-                    <div class="mySlides">
-                        <img src='./media/banner_1.jpg' style='width: 100%; height: 100%' alt="Voyager Banner 1 Moonwalk Simulator Photo" />
+                    <div class="favorite-attractions">
+                        <img src=' ./media/banner_1.jpg' alt="Voyager Banner 1 Moonwalk Simulator Photo" />
                     </div>
-                    <div class="mySlides">
-                        <img src='./media/banner_2.jpg' style='width: 100%;' alt="Voyager Banner 2 Planetarium Photo" />
+                    <div class="favorite-attractions">
+                        <img src='./media/banner_2.jpg' alt="Voyager Banner 2 Planetarium Photo" />
                     </div>
-                    <div class="mySlides">
-                        <img src='./media/banner_3.jpg' style='width: 100%;' alt="Voyager Banner 3 Children Astronaut Costume Photo" />
+                    <div class="favorite-attractions">
+                        <img src='./media/banner_3.jpg' alt="Voyager Banner 3 Children Astronaut Costume Photo" />
                     </div>
+
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
-                <!--1.2. Dot Container-->
-                <div style='text-align: center;'>
-                    <span class="dot" onclick='currentSlide(1)'></span>
-                    <span class="dot" onclick='currentSlide(2)'></span>
-                    <span class="dot" onclick='currentSlide(3)'></span>
-                    <span class="dot" onclick='currentSlide(4)'></span>
-                </div>
+            </div>
+            <!--1.2. Point Container-->
+            <div class="point-container">
+                <span class="point" onclick='currentSlide(1)'></span>
+                <span class="point" onclick='currentSlide(2)'></span>
+                <span class="point" onclick='currentSlide(3)'></span>
+                <span class="point" onclick='currentSlide(4)'></span>
             </div>
             <!--1.3. Path to External JavaScript File (Main Automatic Slideshow Carousel)-->    
             <script src="js/slideshowContainer.js"></script>
@@ -129,8 +127,8 @@
 
             <!--2. Mission Statement-->
             <div>
-                <div style="background-color: white" class="mission">
-                    <h3 style="color: #000000; font-size: 20px">Voyager is Europe's largest Space-themed Amusement Park, featuring a variety of Attractions, from G-Force Rides to Play Areas for Children. We aim to educate, while entertaining our Guests.</h3>
+                <div class="mission">
+                    <p>Voyager is Europe's largest Space-themed Amusement Park, featuring a variety of Attractions, from G-Force Rides to play areas for children. We aim to educate, while entertaining our guests.</p>
                 </div>
                 <br>
 
@@ -138,200 +136,241 @@
 
                 <div class="home_wrapper">
                     <div id="home_content" class="home_content">
-
-
                         <!--3. Main attractions images and description-->
-                        <div style="background-color: white" class="p_round_corners">
-                            <h3 style="color:#0E1FB5"> Our Favorite Space Adventures!</h3>
-                            <br>
-                            <div class="w3-row-padding w3-sections">
-                                <div class="w3-container w3-third" style="padding-left:0;">
-                                    <a href="#attraction_1"><img class="w_round_corners" src="media/attraction_1.png" alt="G-Force Rocket Coaster" width="250"></a>
+                        <div class="our-favorite-space-adventures">
+                            <a id="voyager_attractions" class="anchor"></a>
+                            <h3 class="gradient_heading">Our Favorite Space Adventures!</h3>
+
+                            <!-- There are 5 attractions. Each is held in an attraction container, which takes a picture, title and description. -->
+                            <div class="attraction_container">
+                                <div class="attraction_image_holder">
+                                    <img src="media/attraction_1.png" alt="G-Force Rocket Coaster">
                                 </div>
-                                <div class="attraction_desc" style="margin-left:150px">
-                                    <h4 style="margin-left:110px"><b>G-Force Rocket Coaster</b></h4>
-                                    <p style="margin-left:110px">
+                                <div class= "attraction_description">
+                                    <h4>G-Force Rocket Coaster</h4>
+                                    <p>
                                         Can you handle the force? Our G-Force Rocket Coaster is the fastest in Europe, with the rating of 5.8Gs of force!
                                     </p>
                                 </div>
                             </div>
-                            <div class=" w3-row-padding w3-section">
-                                <div class="w3-container w3-third" style="padding-left:0;">
-                                    <a href="#attraction_2"><img class="w_round_corners" src="media/attraction_2.png" alt="Zero-Gravity Chamber" width="250"> </a>
+                            <div class="attraction_container">
+                                <div class="attraction_image_holder">
+                                    <img src="media/attraction_2.png" alt="Zero-Gravity Chamber">
                                 </div>
-                                <div class="attraction_desc" style="margin-left:150px">
-                                    <h4 style="margin-left:110px"><b>Zero-Gravity Chamber</b></h4>
-                                    <p style="margin-left:110px">
+                                <div class= "attraction_description">
+                                    <h4>Zero-Gravity Chamber</h4>
+                                    <p>
                                         Experience the feeling of weightlessness in our Zero-Gravity Chamber! Relax and enjoy the experience or test yourself with our Zero-Gravity Challenges!
                                     </p>
                                 </div>
                             </div>
-                            <div class="w3-row-padding w3-section">
-                                <div class="w3-container w3-third" style="padding-left:0;">
-                                    <a href="#attraction_3"><img class="w_round_corners" src="media/attraction_3.png" alt="Mars Colony Experience" width="250"></a>
+                            <div class="attraction_container">
+                                <div class="attraction_image_holder">
+                                    <img src="media/attraction_3.png" alt="Mars Colony Experience">
                                 </div>
-                                <div class="attraction_desc" style="margin-left:150px">
-                                    <h4 style="margin-left:110px"><b>Mars Colony Experience</b></h4>
-                                    <p style="margin-left:110px">
+                                <div class= "attraction_description">
+                                    <h4>Mars Colony Experience</h4>
+                                    <p>
                                         Our Mars Colony Experience is designed to let you see, how future Space Colonies might live. Learn about Hydroponic Plants, Waste Management, and Resource Generation.
                                     </p>
                                 </div>
                             </div>
-                            <div class="w3-row-padding w3-section">
-                                <div class="w3-container w3-third" style="padding-left:0;">
-                                    <a href="#attraction_4"><img class="w_round_corners" src="media/attraction_4.png" alt="Virtual Reality Planetarium" width="250"></a>
+                            <div class="attraction_container">
+                                <div class="attraction_image_holder">
+                                    <img src="media/attraction_4.png" alt="Virtual Reality Planetarium">
                                 </div>
-                                <div class="attraction_desc" style="margin-left:150px">
-                                    <h4 style="margin-left:110px"><b>Virtual Reality Planetarium</b></h4>
-                                    <p style="margin-left:110px">
+                                <div class= "attraction_description">
+                                    <h4>Virtual Reality Planetarium</h4>
+                                    <p>
                                         Explore the interactive planetarium controls to discover planets, stars and constellations!
                                     </p>
                                 </div>
                             </div>
-                            <div class="w3-row-padding w3-section">
-                                <div class="w3-container w3-third" style="padding-left:0;">
-                                    <a href="#attraction_5"><img class="w_round_corners" src="media/attraction_5.png" alt="Lunar Rover" width="250"></a>
+                            <div class="attraction_container">
+                                <div class="attraction_image_holder">
+                                    <img src="media/attraction_5.png" alt="Lunar Rover">
                                 </div>
-                                <div class="attraction_desc" style="margin-left:150px">
-                                    <h4 style="margin-left:110px"><b>Lunar Rovers</b></h4>
-                                    <p style="margin-left:110px">
+                                <div class= "attraction_description">
+                                    <h4>Lunar Rover</h4>
+                                    <p>
                                         Drive a life-size Lunar Rover, race your astronaut friends and get up to speed with the Universe!
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <br>
-
 
 
                         <!--4. Customer Reviews-->
-                        <div class="p_round_corners" style="background-color: white">
-                            <h3 style="color: #0E1FB5"> Customer Reviews</h3>
-                            <div class="w3-row-padding w3-section">
-                                <div class="w3-container w3-quarter">
-                                    <img src="media/review_1.jpg" class="w_round_corners" alt="Picture of customer Mike Boldie, aged 35, with his child">
+                        <div class="customer_reviews">
+                            <h3 class="gradient_heading"> Customer Reviews</h3>
+                            <!-- REVIEW 1 -->
+                            <div class="review_container">
+                                <div class="review_image_holder">
+                                    <img src="media/review_1.jpg" alt="Picture of customer Mike Boldie, aged 35, with his child">
                                 </div>
-                                <div class="w3-container w3-rest" style="margin-left:150px">
-                                    <a style="margin-left:110px" href="#customer_review_1">
-                                        <img src="media/star_reviews.png" width="100" alt="Mike Boldie Customer Review 1"></a>
-                                    <p style="margin-left:110px"><b>Mike Boldie (35): </b>
-                                        <i>Don't miss the Theme Park! There is so much to do and see- you could spend a whole week here. My kids especially loved the Zero-Gravity Chamber, and the park was so much fun that we almost didn't notice how much we were learning!</i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="w3-row-padding w3-section">
-                                <div class="w3-container w3-quarter">
-                                    <img src="media/review_2.jpg" class="w_round_corners" alt="Picture of customer Heinrich Stolz, aged 68">
-                                </div>
-                                <div class="w3-container w3-rest" style="margin-left:150px">
-                                    <a href="#customer_review_2">
-                                        <img style="margin-left:110px" src="media/star_reviews.png" width="100" alt="Heinrich Stolz and Susanna Lindenbaum Customer Review 2">
-                                    </a>
-                                    <p style="margin-left:110px"><b>Heinrich Stolz (68):</b>
-                                        <i>I will never forget the time, which I spent with my Wife in this Park. Wonderful holidays at any age- thank you, "Voyager"!</i>
-                                    </p>
+                                <!-- Similar to the attractions, each review is stored in a container. Each contains an image, a star rating and a comment -->
+                                <!-- The layout is changed in every alternate row to make it more visually appealing -->
+                                <div class="review_copy">
+                                    <div class="stars">
+                                        <!-- Adding SVGs of the stars for the rating -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="open_star"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/></svg>
+                                    </div>
+                                    <b>Mike Boldie (35): </b><br/>
+                                    <p><i>Don't miss the Theme Park! There is so much to do and see- you could spend a whole week here. My kids especially loved the Zero-Gravity Chamber, and the park was so much fun that we almost didn't notice how much we were learning!</i></p>
                                 </div>
                             </div>
-                            <div class="w3-row-padding w3-section">
-                                <div class="w3-container w3-quarter">
-                                    <img src="media/review_3.jpg" class="w_round_corners" alt="Picture of customers John Smith (21) and Jana Spring (19)">
+                            <hr>
+                            <!-- REVIEW 2 -->
+                            <div class="review_container">
+                                <div class="review_image_holder">
+                                    <img src="media/review_2.jpg" alt="Picture of customer Heinrich Stolz, aged 68">
                                 </div>
-                                <div class="w3-container w3-rest"  style="margin-left:150px">
-                                    <a  style="margin-left:110px" href="#customer_review_3">
-                                        <img src="media/star_reviews.png" width="100" alt="Jane Smith and Jana Spring Customer Review 3"></a>
-                                    <p  style="margin-left:110px"><b>John Smith (21) and Jana Spring (19):</b>
-                                        <i>We really can't imaginee any better place to spend your time with friends. It was so much fun! I really recommend downloading the app beforehand and making a plan. The park is super clean and well maintained, but there can be queues for the bigger rides especially at the weekend so some pre planning can help you save time and see more!</i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="w3-row-padding w3-section">
-                                <div class="w3-container w3-quarter">
-                                    <img src="media/review_4.jpg" class="w_round_corners" alt="Picture of customer Delia Smith (33)">
-                                </div>
-                                <div class="w3-container w3-rest" style="margin-left:150px">
-                                    <a style="margin-left:110px" href="#customer_review_4">
-                                        <img src="media/star_reviews.png" width="100" alt="Jack Drew, Jane Gibson, Laila Burké, and John Luke Customer Review 4"></a>
-                                    <p style="margin-left:110px"><b>Delia Smith (33):</b>
-                                        <i>I visit this park annually with my students, and it’s always a hit. The park is really well structured which means that waiting times are minimal, and the park has something for everyone. The exhibitions are updated annually so the experience always feels fresh and up-to-date.</i>
-                                    </p>
+                                <div class="review_copy">
+                                    <div class="stars">
+                                        <!-- Adding SVGs of the stars for the rating -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                    </div>
+                                    <b>Heinrich Stolz (68):</b>
+                                    <i>I will never forget the time, which I spent with my Wife in this Park. Wonderful holidays at any age- thank you, "Voyager"!</i>
                                 </div>
                             </div>
+                            <hr>
+                            <!-- REVIEW 3 -->
+                            <div class="review_container">
+                                <div class="review_image_holder">
+                                    <img src="media/review_3.jpg" alt="Picture of customers John Smith (21) and Jana Spring (19)">
+                                </div>
+                                <div class="review_copy">
+                                    <div class="stars">
+                                        <!-- Adding SVGs of the stars for the rating -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="open_star"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/></svg>
+                                    </div>
+                                    <b>John Smith (21) and Jana Spring (19):</b>
+                                    <i>We really can't imagine any better place to spend your time with friends. It was so much fun! I really recommend downloading the app beforehand and making a plan. The park is super clean and well maintained, but there can be queues for the bigger rides especially at the weekend so some pre planning can help you save time and see more!</i>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- REVIEW 4 -->
+                            <div class="review_container">
+                                <div class="review_image_holder">
+                                    <img src="media/review_4.jpg" alt="Picture of customer Delia Smith (33)">
+                                </div>
+                                <div class="review_copy">
+                                    <div class="stars">
+                                        <!-- Adding SVGs of the stars for the rating -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                                    </div>
+                                    <b>Delia Smith (33):</b>
+                                    <i>I visit this park annually with my students, and it’s always a hit. The park is really well structured which means that waiting times are minimal, and the park has something for everyone. The exhibitions are updated annually so the experience always feels fresh and up-to-date.</i>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
 
                     <!--5. Aside including latest events and news & social media feed-->
                     <div id="home_aside" class="aside">
-                        <div class="p_round_corners_aside" style="background-color: white">
-                            <h3 style="color:#0E1FB5;">Latest News and Events</h3>
-                            <br>
 
-
+                        <!-- News and events module --> 
+                        <div class = "latest-news-and-events">
+                            <h3 class="gradient_heading">Latest News and Events</h3>
 
                             <!--5.1. Latest events and news -->
-                            <div id="news_item_1">
+                            <div class="news_item">
                                 <h4><b>Geminids Meteor Shower</b></h4>
-                                <img src="media/news_1.jpg" class="w_round_corners" width=303 alt="Image of a meteor shower with pine trees">
-                                <p>From 12 December 2019 to 16 December 2019, you can join us at the park from 6:30 for a special breakfast, observing the Geminids Meteor Shower. This spectacular shower usually produces about 100 meteors per hour.
+                                <div class="news_image_holder">
+                                    <img src="media/news_1.jpg" alt="Image of a meteor shower with pine trees">
+                                </div>
+                                <p>From 12 December 2019 to 16 December 2019, you can join us at the park from 6:30 for a special breakfast, observing the Geminids Meteor Shower. This spectacular shower usually produces about 100 meteors per hour.</p>
+                                <p>    
                                     <a href="">Read more</a>
                                 </p>
                             </div>
-                            <div id="news_item_2">
+                            <hr>
+                            <div class="news_item">
                                 <h4><b>Penumbral Lunar Eclipse</b></h4>
-                                <img src="media/news_2.jpg" class="w_round_corners" width=303 alt="Image of the different phases of the moon during a lunar eclipse">
-                                <p>Join us for a special late night session on <br>12 January 2020 to observe a Penumbral Lunar Eclipse. Renowned astrophysicist Neil deGrasse Tyson will be the Guest of Honour.
+                                <div class="news_image_holder">
+                                    <img src="media/news_2.jpg" alt="Image of the different phases of the moon during a lunar eclipse">
+                                </div>
+                                <p>Join us for a special late night session on 12 January 2020 to observe a Penumbral Lunar Eclipse. Renowned astrophysicist Neil deGrasse Tyson will be the Guest of Honour.</p>
+                                <p>
                                     <a href="">Read more</a>
                                 </p>
                             </div>
                         </div>
-                        <br>
-                        <br>
+
 
                         <!-- MEDIA STYLING-->                        
                         <!--5.2. Instagram feed - this should later be implemented with the Instagram API but for now it's a mockup-->
-                        <div class="p_round_corners_aside" style="background-color: white">
-                            <h3 style="color: #0E1FB5">Social Media Feed</h3>
-                            <a href="https://www.instagram.com"><img style="float: left; padding: 0px 10px 10px 10px; width:20%;" src="media/instagram.png" alt="Instagram logo"></a>
-                            <p>Tag your Instagram pictures with #VoyagerPark to be featured!</p>
-                            <div class="w3-content w3-section" style="max-width:10px">
-                                <img class="mySlidesInstagram" src="media/Instagram1.jpg" alt="Image of man in front of building, shared by Instagram user @JohnWayne3">      
+                        <div class="social-media-feed">
+                            <h3 class="gradient_heading">Social Media Feed</h3>
+                            <div class="social_media_header">
+                                <div class="instagram_logo_holder">
+                                    <a href="https://www.instagram.com"><img src="media/instagram.png" alt="Instagram logo"></a>
+                                </div>
+                                <p>Tag your Instagram pictures with <b>#VoyagerPark</b> to be featured!</p>
+                            </div>
+
+                            <div class="instagram_container">
+                                <img class="mySlidesInstagram" src="media/Instagram1.jpg" alt="Image of man in front of building, shared by Instagram user @JohnWayne3"> 
                                 <img class="mySlidesInstagram" src="media/Instagram2.jpg" alt="Image of customers looking at a large globe, shared by Instagram user @KellyIsCool2019">
                                 <img class="mySlidesInstagram" src="media/Instagram3.jpg" alt="Image of family enjoying rollercoaster, shared by Instagram user @Iamthebestmom">   
                                 <img class="mySlidesInstagram" src="media/Instagram4.jpg" alt="Image of two users staring at the starry sky, shared by Instagram user @ShaniaTwang">  
                                 <img class="mySlidesInstagram" src="media/Instagram5.jpg" alt="Image of telescope looking out observatory roof at sunset, shared by Instagram user @photographerOnTour">               
-                                <img class="mySlidesInstagram" src="media/Instagram6.jpg" alt="Image of ride in motion, shared by Instagram user @blackandwhitephotos">           
+                                <img class="mySlidesInstagram" src="media/Instagram6.jpg" alt="Image of ride in motion, shared by Instagram user @blackandwhitephotos">
                             </div>                                 
-                            <br>
-                            <br>
-                            <!--5.3. Path to External JavaScript File (Instagram Feed)--> 
-                            <script src="js/mySlidesInstagram.js"></script>
-                        </div>
-                    </div>
 
-                    <!--ANIMATED BUTTONS-->                   
-                    <!--6. NEWS LETTER SUBSCRIPTIONS-->
-                    <div class="newsletter">
-                        <h3>Subscribe to Voyager's Newsletter!</h3>
-                        <div class="container">
-                            <p>Enjoyed your Visit? Many more fantastic experiences and Special Offers are waiting for you at Voyager. Subscribe to our Newsletter for Latest Events and News!</p>
-                        </div>
-                        <div class="container">
-                            <form>
-                                <input type="text" placeholder="Full Name" required>
-                                <input type="email" placeholder="E-mail Address" required>
-                                <br>
-                                <input type="checkbox" required> Recieve weekly Newsletter 
-                                <br>
-                                <input type="checkbox" required> I have read and accept the Terms and Conditions
-                                <div>
-                                    <button class="glow-on-hover" type="button" onclick="window.location.href = 'index.html';">Subscribe</button>
-                                </div>
-                            </form>
+                            <!--5.3. Path to External JavaScript File (Instagram Feed) -->
+                            <script src="js/mySlidesInstagram.js"></script>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!--ANIMATED BUTTONS-->                   
+            <!--6. NEWS LETTER SUBSCRIPTIONS-->
+            <div class="newsletter">
+                <h3>Subscribe to Voyager's Newsletter!</h3>
+                <div class="container">
+                    <p>Enjoyed your Visit? Many more fantastic experiences and special offers are waiting for you at Voyager.
+                        Subscribe to our newsletter for latest news and events!</p>
+                </div>
+                <div class="container">
+                    <form>
+                        <div class="entry_fields">
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="E-mail Address" required>
+                        </div>
+                        <div class="tickboxes">
+                            <input type="checkbox" required> Receive weekly newsletter 
+                            <br>
+                            <input type="checkbox" required> I have read and accept the terms and conditions
+                        </div>
+                        <div>
+                            <button class="glow-on-hover" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+
         <!--THE FOOTER CONTAINS A NUMBER OF LINKS TO IMPORTANT PARTS OF THE SITE, SOCIAL MEDIA LINKS AND LEGAL INFORMATION-->
         <footer>
 
