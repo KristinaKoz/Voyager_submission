@@ -27,17 +27,35 @@ header {
 }
 
 
-/* Style and place the Logo */
+/* Style and place the Logo 
 .logo_container {
-    width: 400px;
-    text-align: center;
-    margin: 0 auto;
+display: grid;
+grid-template-columns: auto;
+text-align: center;
+z-index: -1;
+margin: auto auto;
+max-width: 400px;
+min-width: 100px;
+}
+
+*/
+
+/* Style and place the Logo */
+/* ensure logo is responsive to screensize */
+.logo_container {
+    text-align:center;
+    margin:auto;
+    width:30%;
+    max-width:400px;
+    min-width:200px;
+    min-height: 125px;
 }
 
 
-.logo {
+
+.logo_container img {
     width: 100%;
-    text-align: center;
+    height: auto;
 }
 
 /* Style and place the Header buttons */
@@ -217,9 +235,11 @@ footer a {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 33% 34% 33%;
+    grid-template-columns: auto auto auto;
+    max-width: 80%;
+    margin-left: 120px;
+    margin-right: 120px;
     column-gap: 30px;
-    padding: 25px;
 }
 
 
@@ -240,18 +260,30 @@ footer ul a:hover {
 
 
 .copyright {
-    padding: 20px;
     text-align: right;
+    max-width: 80%;
+    margin-left: 120px;
+    margin-right: 120px;
+    grid-template-columns: auto auto auto;
+    column-gap: 30px;
+    padding: 25px;
 }
 
 
 .padded_bottom {
     padding-bottom: 25px;
+    max-width: 250px;
+}
+
+.padded_bottom img {
+    padding-bottom: 10px;
+    max-width: 250px;
 }
 
 
 .padded_bottom img:hover{
     transform: scale(1.1,1.1);
+
 }
 
 
@@ -263,6 +295,7 @@ summary {
     background-color: #9e34b4;
     transition: 1s;
     margin-bottom: 5px;
+    max-width: 400px;
 }
 
 
@@ -275,6 +308,7 @@ summary {
     margin-bottom: 15px;
     color: black;
     margin-top: -5px;
+    max-width: 400px;
 }
 
 
@@ -283,6 +317,8 @@ footer table {
     border-spacing: 0;
     width: 100%;
     margin-top: 20px;
+    max-width: 250px;
+    min-width: 220px;
 }
 
 
@@ -351,7 +387,6 @@ h4 {
     margin-right: 120px;
     margin-top: 20px;
     position: relative;
-    max-width: auto/3;
     max-height: 560px;
     min-width: 300px;
     min-height: auto;
@@ -609,7 +644,6 @@ h4 {
 .social-media-feed {
     clear: both;
     display: inline-block;
-    -height: 100%;
     max-height: 100%;
     text-align: justify;
     margin-left: 20px;

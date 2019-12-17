@@ -28,29 +28,31 @@
 
         <!--THE HEADER CONTAINS THE LOGO, LANGUAGE OPTIONS, SHOPPING CART AND NAVIGATION-->
         <header>
-            <!-- BOX MODELLING USED ACROSS THE WHOLE WEBSITE-->    
-            <!-- ANIMATED AND TRANSFORMED LOGO-->
             <div class="logo_container">
-                <a href="index.html"><img class="w3-animate-opacity" src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
+                <a href="index.html"><img src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
             </div>
             <!-- TRANSFORMED SHOPPING CART AND LANGUAGE OPTIONS BUTTONS-->
-            <div class="header_buttons">
+            <div class="header_buttons_right">
                 <a href="booking.html"><img src="media/cart.png" alt="Link to shopping cart" height="40"></a>
-                <!-- This creates a pop up that tells users that more languages will eb available soon -->
+                <!-- This creates a pop up that tells users that more languages will be available soon -->
                 <div class="tooltip">
                     <img src="media/en.png" alt="Language option: English" width="40">
                     <span class="tooltiptext">More languages coming soon!</span>
                 </div>
             </div>
+            <!--5.4. Audio Player-->
+            <audio src="media/Good_Times.mp3" id="player" loop="loop" preload="auto">
+            </audio>
+            <div class="header_buttons_left"> 
+                <a onclick = "togglePlay()"><img src="media/playbtn.png" id="musicButton" height="40" alt="control button for music"></a>
+                <script src="js/musicPlayer.js"></script>
+            </div>
             <p class="opening_today">
                 <!-- This piece of code uses a simple JavaScript script to get the current date -->
-                <span id="date_time"></span>
-                <script>window.onload = date_time('date_time');</script>: <br/>
+                <span id="date_time"></span>.
+                <script>window.onload = date_time('date_time');</script>:<br/>
                 We are open from <time>10:00</time> to <time>23:00</time>.
             </p>
-            <!--5.4. Audio Player-->
-            <audio src="media/Good_Times.mp3" controls="controls" loop="loop" preload="auto">
-            </audio>
 
             <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE-->
             <nav>
