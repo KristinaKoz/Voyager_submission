@@ -1,4 +1,5 @@
 //JavaScript code for Automatic Instagram Slideshow ("Home Page")
+//This code was heavily inspired from this w3schools article: https://www.w3schools.com/howto/howto_js_slideshow.asp
 
 var myIndex = 0;
 carousel();
