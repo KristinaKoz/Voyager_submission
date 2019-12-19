@@ -1,5 +1,12 @@
 //JavaScript code for managing the music
 //Contributed by Hazel O'Keeffe. 
+/*
+References used:
+Usage of the play() and pause() methods is explained here: https://www.w3schools.com/jsref/met_audio_play.asp
+These were used to start and stop the music on click
+The DOM image src property reference can be found here: https://www.w3schools.com/jsref/prop_img_src.asp
+This was used to toggle the music button between the play and the pause state.
+*/
 
 //create variables for the player and the music control button
 var bgMusic = document.getElementById("player");

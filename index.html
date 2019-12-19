@@ -4,7 +4,8 @@
     <!--METADATA-->
     <!-- Contribution: Main HTML coding for this page was provided by Kristine Kuprevica. A number of people provided content including Hazel O'Keeffe, Kristina Kozaj and Kristine Kuprevica. Additional coding work on the skeleton and header/footer was provided by Kishore Mishra, Kristine Kuprevica, and Kenjiro Ono. Main CSS styling was provided by Kristina Kozaj. Main layout and styling for the Header and Footer was provided by Hazel O'Keeffe. Additional CSS styling was provided by Kristine Kuprevica and Kenjiro Ono. Tweaks for validation were done by Hazel O'Keeffe. -->
 
-
+    <!-- HEAD -->
+    <!-- The <head> section of page is used to define important page information that's not shown on the page. This includes things like the title and favicon which are shown in the page tab, the metadata which is used for search engine optimisation (SEO), technical settings for how the page should be display such as refresh time and links to external resources used in the site such as stylesheets or JavaScript files. -->
     <head>
         <title>Voyager | Europe's largest Space-themed Amusement Park</title>
         <meta charset="utf-8">
@@ -24,53 +25,68 @@
         <script src="js/getDate.js"></script>
     </head>
 
-    <!--Body-->
+    <!-- BODY -->
+    <!-- The <body> section of the page is where the all the content on the page is defined. This includes content that is the same across all pages in the site such as the header and the footer, as well as page-specific content. -->
     <body>
 
-        <!--THE HEADER CONTAINS THE LOGO, LANGUAGE OPTIONS, SHOPPING CART AND NAVIGATION-->
+        <!-- HEADER -->
+        <!-- The <header> section of the page is used to define the content that proceeds the main content of the page. It can include elements like branding, navigation or a search bar for example. In our site, our header contains a logo, a notice about today's opening hours, a music control button, a shopping cart icon, a language option button and the main navigation. -->
         <header>
+            <!-- LOGO -->
+            <!-- The logo is contained within a <div> tag which makes it easier to move it within our header. It's also contained within an <a> tag - it's common to use a hyperlink on the main site logo to hyperlink users page to the homepage -->
             <div class="logo_container">
                 <a href="index.html"><img src="media/VOYAGER_Logo.png" alt="Theme park logo" width="400"></a>
             </div>
-            <!-- TRANSFORMED SHOPPING CART AND LANGUAGE OPTIONS BUTTONS-->
+            <!-- HEADER BUTTONS RIGHT -->
+            <!-- This <div> is shown on the right hand side of the header and contains two buttons- the shopping cart and the language icon. Having both buttons within the same div makes it easier to style them. The shopping cart button is an image enclosed within <a> tags which means that if users click that button they'll be redirected to the Booking page. The Language button has a tooltip that appears on hover to inform users that other languages will soon be available, but unfortunately the site is only available in English for now. As we want the park to appeal to as wide an audience as possible, it's intended that future work on the project would include adding multiple additional languages. -->
             <div class="header_buttons_right">
+                <!-- BOOKING BUTTON -->
                 <a href="booking.html"><img src="media/cart.png" alt="Link to shopping cart" height="40"></a>
-                <!-- This creates a pop up that tells users that more languages will be available soon -->
+                <!-- LANGUAGE BUTTON -->
                 <div class="tooltip">
                     <img src="media/en.png" alt="Language option: English" width="40">
+                    <!-- This text will appear in the tooltip popup on hover -->
                     <span class="tooltiptext">More languages coming soon!</span>
                 </div>
             </div>
-            <!--5.4. Audio Player-->
+            <!-- AUDIO PLAYER -->
+            <!-- This section create an audio player which allows our website to play music. This isn't shown on the page, instead the musicButton in the header buttons left section is used to control the music. We give the player an id of "player" so that we can easily call it with JavaScript, and we set the music to preload and loop. We also define the source of the music here. -->
             <audio src="media/Good_Times.mp3" id="player" loop="loop" preload="auto">
             </audio>
+            <!-- HEADER BUTTONS LEFT -->
+            <!-- This <div> is shown on the left hand side of the header and contains an image which functions as a button to control the music -->
             <div class="header_buttons_left"> 
+                <!-- Here we're assigning the JavaScript event "togglePlay() to the image representing the music control button. The source of that Javascript file is musicPlayer.js. This function toggles the music between play() and pause() and also updates the image shown to be the correct one (it shows a pause icon when the music is playing, and a play icon when the music isn't playing. -->
                 <a onclick = "togglePlay()"><img src="media/playbtn.png" id="musicButton" height="40" alt="control button for music"></a>
                 <script src="js/musicPlayer.js"></script>
             </div>
+            <!-- OPENING HOURS -->
+            <!-- This paragraph contains today's date and the opening hours so users can quickly and easily understand if the park is open today. -->
             <p class="opening_today">
-                <!-- This piece of code uses a simple JavaScript script to get the current date -->
+                <!-- This code creates an empty span called "date_time". It then calls a JavaScript function called date_time() which can be found in the getDate.js file. This function gets the current timestamp and converts it to text. This text is then displayed on the page. As the park is open the same times every day, the second part of the paragraph is static. If this was to change in future, we could update the times dynamically with the same script. -->
                 <span id="date_time"></span>.
                 <script>window.onload = date_time('date_time');</script>:<br/>
                 We are open from <time>10:00</time> to <time>23:00</time>.
             </p>
 
-
-            <!-- THE MAIN NAVIGATION FOR THE SITE IS DETAILED HERE-->
+            <!-- NAVIGATION -->
+            <!-- This section defines the main navigation of the site. There are three main navigation links in <a> tags, organised into an unordered list (<ul>). Each of the three navigation items has a dropdown menu which appears on hover. The dropdown items for each navigation link are detailed in a div within the <li> for each navigation link. Each of these links are also wrapped in an <a> tag. Most are also using anchors in order to jump to a specific part of a page e.g. Latest events and news. -->
             <nav>
                 <ul>
+                    <!-- NAV LINK 1: ATTRACTIONS -->
                     <li class="dropdown">
                         <a href="index.html#voyager_attractions" class="dropbtn">Attractions and Activities</a>
-                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <!-- NAV LINK 1 DROPDOWN -->
                         <div class="dropdown-content">
                             <a href="index.html#voyager_attractions">Most visited attractions</a>
                             <a href="practical_information.html#specialoffers">Special offers</a>
                             <a href="index.html#latest_news">Latest events and news</a>
                         </div>
                     </li>
+                    <!-- NAV LINK 2: PRACTICAL INFORMATION -->
                     <li class="dropdown">
                         <a href="practical_information.html" class="dropbtn">Practical Information</a>
-                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <!-- NAV LINK 2 DROPDOWN -->
                         <div class="dropdown-content">
                             <a href="practical_information.html#dates_hours">Dates and Hours</a>
                             <a href="practical_information.html#directions">Directions</a>
@@ -78,9 +94,10 @@
                             <a href="practical_information.html#helpful_tips">Helpful Tips</a>
                         </div>
                     </li>
+                    <!-- NAV LINK 3: BOOK YOUR TICKET -->
                     <li class="dropdown">
                         <a href="booking.html" class="dropbtn">Book your Ticket</a>
-                        <!-- THIS SECTION IS A DROPDOWN -->
+                        <!-- NAV LINK 3 DROPDOWN -->
                         <div class="dropdown-content">
                             <a href="booking.html#Child">Children (age 6 to 16)</a>
                             <a href="booking.html#Adult">Adults (age 17 and over)</a>
@@ -92,7 +109,8 @@
             </nav>
         </header>
 
-        <!--1 Main Automatic Slideshow Carousel Container-->
+        <!-- CAROUSEL -->
+        <!-- -->
         <!--1.1. Slideshow Container-->
         <div id="main_content">
             <div class="slideshow-container">
@@ -132,16 +150,19 @@
                 </div>
                 <br>
 
-                <!--Main Content-->
+                <!-- CONTENT WIDGETS -->
 
                 <div class="home_wrapper">
-                    <div id="home_content" class="home_content">
-                        <!--3. Main attractions images and description-->
+                    <div class="home_content">
+
+                        <!-- OUR FAVOURITE SPACE ADVENTURES -->
+                        <!-- This section contains the 5 attractions that can be found in the park. All attractions are contained within a div called "our-favourite-space-adventures". This div controls how the whole widget appears on the page in terms of spacing and design. Within that div we have a title which is enclosed in <h3> tags to make it stand out. Then each attraction is created within an "attraction-container" div. This div provides a container for each attraction. Within this dic each attraction has a div to hold an image of the attraction, and a div to hold a description. The description div has a title in <h4> as well as a paragraph explaining why a user might want to visit that attraction. -->
                         <div class="our-favorite-space-adventures">
+
                             <a id="voyager_attractions" class="anchor"></a>
                             <h3 class="gradient_heading">Our Favorite Space Adventures!</h3>
 
-                            <!-- There are 5 attractions. Each is held in an attraction container, which takes a picture, title and description. -->
+                            <!-- ATTRACTION 1 -->
                             <div class="attraction_container">
                                 <div class="attraction_image_holder">
                                     <img src="media/attraction_1.png" alt="G-Force Rocket Coaster">
@@ -153,6 +174,7 @@
                                     </p>
                                 </div>
                             </div>
+                            <!-- ATTRACTION 2 -->
                             <div class="attraction_container">
                                 <div class="attraction_image_holder">
                                     <img src="media/attraction_2.png" alt="Zero-Gravity Chamber">
@@ -164,6 +186,7 @@
                                     </p>
                                 </div>
                             </div>
+                            <!-- ATTRACTION 3 -->
                             <div class="attraction_container">
                                 <div class="attraction_image_holder">
                                     <img src="media/attraction_3.png" alt="Mars Colony Experience">
@@ -175,6 +198,7 @@
                                     </p>
                                 </div>
                             </div>
+                            <!-- ATTRACTION 4 -->
                             <div class="attraction_container">
                                 <div class="attraction_image_holder">
                                     <img src="media/attraction_4.png" alt="Virtual Reality Planetarium">
@@ -186,6 +210,7 @@
                                     </p>
                                 </div>
                             </div>
+                            <!-- ATTRACTION 5 -->
                             <div class="attraction_container">
                                 <div class="attraction_image_holder">
                                     <img src="media/attraction_5.png" alt="Lunar Rover">
@@ -200,7 +225,8 @@
                         </div>
 
 
-                        <!--4. Customer Reviews-->
+                        <!-- CUSTOMER REVIEWS -->
+                        <!-- The customer reviews module is displayed directly beneath the Attractions module. All reviews are contained within a div called "customer_reviews". This div controls how the whole widget appears on the page in terms of spacing and design. Within that div we have a title which is enclosed in <h3> tags to make it stand out. Then each review is created within an "review_container" div. This div provides a container for each review. Within this div each review has a div to hold an image of the reviewer(s), and a div to hold a review itself. That review_copy div has another div enclosed containing the SVG images used to display the star rating. It also has the name of the reviewer(s) in bold text, and the copy of their review in italics.-->
                         <div class="customer_reviews">
                             <h3 class="gradient_heading"> Customer Reviews</h3>
                             <!-- REVIEW 1 -->
@@ -208,17 +234,16 @@
                                 <div class="review_image_holder">
                                     <img src="media/review_1.jpg" alt="Picture of customer Mike Boldie, aged 35, with his child">
                                 </div>
-                                <!-- Similar to the attractions, each review is stored in a container. Each contains an image, a star rating and a comment -->
-                                <!-- The layout is changed in every alternate row to make it more visually appealing -->
                                 <div class="review_copy">
                                     <div class="stars">
-                                        <!-- Adding SVGs of the stars for the rating -->
+                                        <!-- REVIEW 1: STARS -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="open_star"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/></svg>
                                     </div>
+                                    <!-- REVIEW 1: COPY -->
                                     <b>Mike Boldie (35): </b><br/>
                                     <p><i>Don't miss the Theme Park! There is so much to do and see- you could spend a whole week here. My kids especially loved the Zero-Gravity Chamber, and the park was so much fun that we almost didn't notice how much we were learning!</i></p>
                                 </div>
@@ -231,13 +256,14 @@
                                 </div>
                                 <div class="review_copy">
                                     <div class="stars">
-                                        <!-- Adding SVGs of the stars for the rating -->
+                                        <!-- REVIEW 2: STARS -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                     </div>
+                                    <!-- REVIEW 2: COPY -->
                                     <b>Heinrich Stolz (68):</b>
                                     <i>I will never forget the time, which I spent with my Wife in this Park. Wonderful holidays at any age- thank you, "Voyager"!</i>
                                 </div>
@@ -250,13 +276,14 @@
                                 </div>
                                 <div class="review_copy">
                                     <div class="stars">
-                                        <!-- Adding SVGs of the stars for the rating -->
+                                        <!-- REVIEW 3: STARS -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="open_star"><path d="M12 6.76l1.379 4.246h4.465l-3.612 2.625 1.379 4.246-3.611-2.625-3.612 2.625 1.379-4.246-3.612-2.625h4.465l1.38-4.246zm0-6.472l-2.833 8.718h-9.167l7.416 5.389-2.833 8.718 7.417-5.388 7.416 5.388-2.833-8.718 7.417-5.389h-9.167l-2.833-8.718z"/></svg>
                                     </div>
+                                    <!-- REVIEW 3: COPY -->
                                     <b>John Smith (21) and Jana Spring (19):</b>
                                     <i>We really can't imagine any better place to spend your time with friends. It was so much fun! I really recommend downloading the app beforehand and making a plan. The park is super clean and well maintained, but there can be queues for the bigger rides especially at the weekend so some pre planning can help you save time and see more!</i>
                                 </div>
@@ -269,13 +296,14 @@
                                 </div>
                                 <div class="review_copy">
                                     <div class="stars">
-                                        <!-- Adding SVGs of the stars for the rating -->
+                                        <!-- REVIEW 4: STARS -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="full_star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
                                     </div>
+                                    <!-- REVIEW 4: COPY -->
                                     <b>Delia Smith (33):</b>
                                     <i>I visit this park annually with my students, and it’s always a hit. The park is really well structured which means that waiting times are minimal, and the park has something for everyone. The exhibitions are updated annually so the experience always feels fresh and up-to-date.</i>
                                 </div>
@@ -371,20 +399,23 @@
             </div>
         </div>
 
-        <!--THE FOOTER CONTAINS A NUMBER OF LINKS TO IMPORTANT PARTS OF THE SITE, SOCIAL MEDIA LINKS AND LEGAL INFORMATION-->
+        <!-- FOOTER -->
+        <!-- The <footer> section appears at the end of the page, and is the same on every page. It contains three columns, enclosed within a <div> called "wrapper". This div controls how the columns are displayed. The first column provides the user with important information about the park such as the opening hours, contact information and an "About Us" section. As there is quite a lot of information here, it has been organized into a <details> structure so the user can expand the section that they're interested in reading. The second section contains a number of important links. Most of these links are non-functional as they go beyond the scope of the project. All links here change colour on hover. Finally the last column also contains links, but these are in the form of images. -->
         <footer>
-
-            <!--GRIDS AND COLUMNS--> 
-            <!--LINKS TO IMPORTANT INFORMATION-->
             <div class="wrapper">
+
+                <!-- COLUMN 1: PARK INFORMATION -->
+                <!-- The park information has three sections - Opening Hours, About Us, and Contact Information. all three sections are organised into an unordered list. Within each <li> there is a <details> section. This allows us to create accordian type functionality and allow users to expand the information they want to see. Details widgets are closed by default, unless the keyword "open" is added to the tag as it is with the Opening Hours section. The details object has 2 sections - a <summary> which defines the content shown when the object is collapsed, and an "accordian_details" div which shows when the user clicks to expand the section. -->
                 <div id="park_information">
                     <h3>Park information</h3>
                     <ul>
+                        <!-- ACCORDIAN 1: OPENING HOURS -->
                         <li>
                             <details open>
                                 <summary>Opening Hours</summary>
                                 <div class="accordian_details">
                                     <p>We are open every day, all year long!</p>
+                                    <!-- Opening hours are shown within a table for legibility purposes. -->
                                     <table>
                                         <tr><th>Monday</th><td>10:00 - 23:00</td></tr>
                                         <tr><th>Tuesday</th><td>10:00 - 23:00</td></tr>
@@ -397,10 +428,12 @@
                                 </div>
                             </details>
                         </li>
+                        <!-- ACCORDIAN 2: ABOUT US -->
                         <li>
                             <details>
                                 <summary>About Us</summary>
                                 <div class="accordian_details">
+                                    <!-- As there is a lot of information in this section, it's organised into paragraphs for legibility -->
                                     <p>
                                         "Voyager" is the largest Space-themed Amusement park in Europe. We were established back in 2010, here in a wonderful place, called Greenburg. Every year we are delighted to welcome thousands of Guests from all around the World.
                                     </p>
@@ -420,7 +453,7 @@
                                 </div>
                             </details>
                         </li>
-
+                        <!-- ACCORDIAN 3: CONTACT INFORMATION -->
                         <li>
                             <details>
                                 <summary>Contact Information</summary>
@@ -428,10 +461,10 @@
                                     <p>
                                         <b>Voyager Inc.</b>
                                     </p>
-
                                     <address>1 Green Road, <br />Greenburg, Greencountry, <br />GG11 1000</address><br />
+                                    <!-- These <a> tags will launch an email/call if pressed on a comaptible browser -->
                                     <a href="tel:01344556677" class="contact_info">+01(0)344556677</a><br />&nbsp;<br />
-                                    <a href="info@voyagerpark.com" class="contact_info">info@voyagerpark.com</a>
+                                    <a href="mailto:info@voyagerpark.com" class="contact_info">info@voyagerpark.com</a>
 
                                 </div>
                             </details>
@@ -439,9 +472,10 @@
                     </ul>
                 </div>
 
-
+                <!-- COLUMN 2: FIND US AND LEGAL -->
+                <!-- This column contains 3 divs, each with a <h3> title and an unordered list containing a number of links. Each of these three divs is assigned to the "padded_bottom" class which adds some padding to the bottom of the div allowing space to sppear between the divs. Some of these links include required information such as the privacy policy - they were included to show that we understood the importance of them, but creating those legal pages was out of scope of the project. All links in this column have a hover effect applied so they change colour when the user hover over them. -->
                 <div id="find_us_and_legal">
-                    <div id="location_information" class="padded_bottom">
+                    <div class="padded_bottom">
                         <h3>How to Find Us</h3>
                         <ul>
                             <li><a href="practical_information.html">Directions</a></li>
@@ -450,16 +484,16 @@
                         </ul>
                     </div>
 
-                    <div id="more_information" class="padded_bottom">
+                    <div class="padded_bottom">
                         <h3>Other Important Links</h3>
                         <ul>
-                            <li><a href="index.html">Help Center</a></li>
-                            <li><a href="index.html">Career Opportunities</a></li>
-                            <li><a href="index.html">Shop Our Merchandise</a></li>
+                            <li><a href="">Help Center</a></li>
+                            <li><a href="">Career Opportunities</a></li>
+                            <li><a href="">Shop Our Merchandise</a></li>
                         </ul>
                     </div>
 
-                    <div id="legal_information">
+                    <div>
                         <h3>Legal Information</h3>
                         <ul>
                             <li><a href="">Sitemap</a></li>
@@ -470,29 +504,30 @@
                     </div>
                 </div>
 
-                <!-- TRANSFORMED ICONS-->
-                <!--LINKS TO SOCIAL MEDIA SITES, THE APP STORES AND THE MAIN REVIEWS SITES-->
+                <!-- COLUMN 3: VISUAL LINKS -->
+                <!-- The final column in the footer also contains a series of links, but these are presented as images rather than as text links as they are in column 2. Again there are 3 divs, one for social media icons, one for apps and one for reviews. As with the previous column, the "padded_bottom" class is used to add spacing. There is an animation effect applied to these images- they grow slightly on hover making the site feel even more responsive for the user. -->
                 <div id="follow_us">
-                    <div id="social_media" class="padded_bottom">
+                    <div class="padded_bottom">
                         <h3>Follow Us On</h3>
                         <a href="https://www.facebook.com"><img src="media/FB.png" width="50" alt="Facebook logo"></a>
                         <a href="https://www.twitter.com"><img src="media/TW.png" width="50" alt="Twitter logo"></a>
                         <a href="https://www.instagram.com"><img src="media/IG.png" width="50" alt="Instagram logo"></a>
                         <a href="https://www.youtube.com"><img src="media/YT.png" width="50" alt="YouTube logo"></a>
                     </div>
-                    <div id="App" class="padded_bottom">
+                    <div class="padded_bottom">
                         <h3>Download Our App</h3>
                         <a href="https://play.google.com/"><img src="media/android.png" width="50" alt="Google Play logo"></a>
                         <a href="https://www.apple.com/ios/app-store/"><img src="media/apple.png" width="50" alt="Apple App Store logo"></a>
                     </div>
-                    <div id="Reviews" class="padded_bottom">
+                    <div>
                         <h3>Our Reviews</h3>
                         <a href="https://www.tripadvisor.com/"><img src="media/tripadvisor_logo.png" width="100" alt="TripAdvisor logo"></a>
                         <a href="https://www.abta.com/"><img src="media/abta_logo.png" width="100" alt="ABTA logo"></a>
                     </div>
                 </div>
             </div>
-            <div class="copyright">Copyright © 2019 Voyager Theme Park</div>
+            <!-- Adding some copyright text so no other theme parks try to steal our website! -->
+            <div class="copyright">Copyright © 2020 Voyager Theme Park</div>
         </footer>
 
     </body>
