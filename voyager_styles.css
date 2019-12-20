@@ -51,8 +51,6 @@ min-width: 100px;
     min-height: 125px;
 }
 
-
-
 .logo_container img {
     width: 100%;
     height: auto;
@@ -783,36 +781,93 @@ body {
     font-family: "Roboto Slab", "Arial", Sans-serif;
 }
 
+/*Styling container for attractions and customer reviews*/
+.info_wrapper {
+    display: grid;
+    grid-template-columns: auto 70%;
+    margin-left: 120px;
+    margin-right: 120px;
+    overflow: hidden;
+    z-index: -1;
+    text-align: justify;
+}
 
-/* Practical Information Page description and background*/
+.info_content {
+    display: inline-block;
+    max-width: 100%;
+    z-index: -1;
+    text-align: justify-all;
+}
+
+
 #practical_info {
+    font-family: "Roboto Slab", "Arial", Serif;
     text-align: center;
-    margin-top: 0px;
     color: white;
 }
 
-
-#practical_info + h2 {
-    width: 100%;
-    text-align: center;
-    font-size: 1em;
-    padding-bottom: 20px;
-    border-bottom: 0.5px solid #505159;
-    color: white;
+.info_container {
+    border-radius: 0px 25px 25px 0px;
+    background-color: #FFFFFF;
+    clear: both;
+    display: inline-block;
+    width:100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top:10px;
+    padding:30px;
+    overflow: auto;
 }
 
-
-#pinfo_upper {
+.info_container table {
+    border-collapse: collapse;
     width: 100%;
-    padding-bottom: 50px;
+    margin-top: 20px;
 }
+
+.info_container table th {
+    width: 40%;
+    padding: 10px;
+}
+
+.info_container table tr td {
+    border:none;
+}
+
+.info_container table tr:nth-child(odd) td {
+    background: #f1f1f1;
+}
+
+.info_container table tr:nth-child(odd) th {
+    background: #f1f1f1;
+}
+
+.info_image {
+    display: inline-block;
+    max-width: 100%;
+    z-index: -1;
+    margin-top:10px;
+}
+
+.info_image img {
+    max-width:100%;
+    max-height:100%;
+    border: 5px solid #9e34b4;
+    margin: 0;
+    border-radius: 25px 0px 0px 25px;
+    background: white;
+}
+
 
 
 .info_box {
-    width: 900px;
-    height:167px;
-    margin: 20px auto;
+width:900px;
+height:167px;
+margin: 20px auto;
 }
+
 
 
 /* Styling images */
